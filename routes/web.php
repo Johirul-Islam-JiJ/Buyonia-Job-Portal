@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteSettingController;
@@ -45,5 +46,10 @@ Route::group(['middleware' => 'share-data'], function () {
         //site setting
         Route::get('setting', [SiteSettingController::class, 'viewSetting'])->name('setting.index');
         Route::post('setting/{id}', [SiteSettingController::class, 'saveSettings'])->name('setting.update');
+
+        //jobs
+
+        Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+
     });
 });
