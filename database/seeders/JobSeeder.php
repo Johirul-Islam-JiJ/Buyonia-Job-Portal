@@ -16,16 +16,26 @@ class JobSeeder extends Seeder
     {
         $job = new Job();
 
-        // $job->name = 'Software Engineer';
-        // $job->email = 'business@email.com';
-        // $job->phone = '01788888888';
-        // $job->whatsapp = '+88017877777779';
-        // $job->working_hour = '10';
-        // $job->address = 'Bangladesh, Dhaka';
-        // $job->logo = 'logo.png';
-        // $job->favicon = 'fav.png';
-        // $job->description = 'Buyonia Limited short description';
-        // $job->copyright = '2022';
+        $job->title = 'Software Engineer';
+        $job->description = 'We need an web developer with in hand working experienced in Software Company and several Projects';
+        $job->salary = '25000';
+        $job->location = 'Dhaka';
+        $job->type = 'Full Time';
+        $job->qualification = 'BSc in CSE,SWE,CE and equivalent Degree from  Reputed University';
+        $job->experience = '2 Years';
+        $job->application_deadline = '2023-06-30';
+        $job->application_link = 'https: //docs.google.com/forms/u/0/d/1d76oIOHOcIi3CDvnH-
+        SHsuuNNwllLKInQmMPzwU8P0M/edit?ntd=1&usp=forms_home&ths=true';
+        $job->how_to_apply = 'Read The Given Instruction carefully';
+        $job->job_category = 'Information Technology';
+        $job->job_level = 'Entry';
+        $job->job_nature = 'Remote';
+        $job->employment_status = 'Unemployed';
+        $job->company_name = 'Buyonia Bangladesh Limited';
+        $job->company_website = 'https: //buyoniasoft.com/';
+        $job->company_email = 'info@buyoniasoft.com';
+        $job->company_phone = '+8809610001012';
+        $job->company_address = '186 Perth Road, Barking IG11 7UD, United kingdom';
 
         $job->save();
 
