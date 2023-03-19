@@ -103,6 +103,123 @@
                                             <td>{{ $job->company_email }}</td>
                                             <td>{{ $job->company_phone }}</td>
                                             <td>{{ $job->company_address }}</td>
+                                            <td class='{{ $job->deleted_at != null ? "text-danger" : "text-success"}}'>
+                                            {{ $job->deleted_at != null ? 'Inactive' : 'Active' }}
+                                        </td>
+                                            <td>
+
+                                            <div class="btn-group"
+                                                 role="group"
+                                                 aria-label="Basic example">
+                                                @if($job->deleted_at != null)
+
+                                                    <a class="text-success mr-2"
+                                                       href="{{ route('jobs.restore',$job) }}"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       title="Restore"><i
+                                                            data-feather="refresh-cw"></i></a>
+                                                    <section id="basic-modals p-0 m-0">
+                                                        <div class="row p-0 m-0">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card p-0 m-0">
+
+                                                                    <div class="card-body p-0 m-0">
+                                                                        <div class="demo-inline-spacing">
+
+
+                                                                            <!-- Vertical modal -->
+                                                                            <div class="vertical-modal-ex p-0 m-0">
+                                                                                <button type="button"
+                                                                                        class="bg-transparent btn shadow-none p-0 m-0"
+                                                                                        data-toggle="modal"
+                                                                                        data-target="#exampleModalCenter">
+                                                                                <span class="text-danger"
+                                                                                      data-toggle="tooltip"
+                                                                                      data-placement="top"
+                                                                                      title="Force Delete"><i
+                                                                                        data-feather="trash-2"></i>
+                                                                                </span>
+                                                                                </button>
+                                                                                <!-- Modal -->
+                                                                                <div class="modal fade"
+                                                                                     id="exampleModalCenter"
+                                                                                     tabindex="-1"
+                                                                                     role="dialog"
+                                                                                     aria-labelledby="exampleModalCenterTitle"
+                                                                                     aria-hidden="true">
+                                                                                    <div
+                                                                                        class="modal-dialog modal-dialog-centered"
+                                                                                        role="document">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                                <h5 class="modal-title"
+                                                                                                    id="exampleModalCenterTitle">
+                                                                                                    Please confirm</h5>
+                                                                                                <button type="button"
+                                                                                                        class="close"
+                                                                                                        data-dismiss="modal"
+                                                                                                        aria-label="Close">
+                                                                                                <span
+                                                                                                    aria-hidden="true">&times;</span>
+                                                                                                </button>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <p>
+                                                                                                    Are you sure you
+                                                                                                    want to
+                                                                                                    delete this
+                                                                                                    permanently?
+                                                                                                </p>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+
+
+                                                                                                {{--                                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">--}}
+                                                                                                <a class="mr-2 btn btn-danger"
+                                                                                                   href="{{ route('jobs.forceDelete',$job) }}">Delete</a>
+
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Vertical modal end-->
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+
+                                                @else
+                                                    <a class="text-success mr-2"
+                                                       href="{{ route('jobs.edit',$job) }}"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       title="Edit"><i
+                                                            data-feather="edit"></i></a>
+
+                                                    <form action="{{ route('jobs.destroy',$job) }}"
+                                                          method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                                class="bg-transparent btn shadow-none p-0 m-0"
+                                                                data-toggle="tooltip"
+                                                                data-placement="top"
+                                                                title="Delete"><i
+                                                                class="text-danger"
+                                                                data-feather="trash-2"></i></button>
+
+                                                    </form>
+
+                                                @endif
+                                            </div>
+                                        </td>
                                         </tr>
                                     @endforeach
 

@@ -89,6 +89,28 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        $job->delete();
+        return redirect()->back()->with('toast-success', 'Job deleted');
+
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function forceDelete($job)
+    {
+        Job::onlyTrashed()->find($job)->forceDelete();
+        return redirect()->back()->with('toast-success', 'Job Permanantly Deleted');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function restore($job)
+    {
+        Job::onlyTrashed()->find($job)->restore();
+        return redirect()->back()->with('toast-success', 'Job Restored');
     }
 }
