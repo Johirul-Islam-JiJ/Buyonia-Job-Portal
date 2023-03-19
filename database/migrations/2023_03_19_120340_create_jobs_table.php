@@ -22,7 +22,7 @@ class CreateJobsTable extends Migration
             $table->string('type');
             $table->string('qualification');
             $table->string('experience');
-            $table->string('application_deadline');
+            $table->date('application_deadline');
             $table->string('application_link');
             $table->text('how_to_apply');
             $table->string('job_category');
