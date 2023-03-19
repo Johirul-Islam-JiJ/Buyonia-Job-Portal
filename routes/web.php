@@ -50,6 +50,7 @@ Route::group(['middleware' => 'share-data'], function () {
         //jobs
 
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+        Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
 
     });
 });
