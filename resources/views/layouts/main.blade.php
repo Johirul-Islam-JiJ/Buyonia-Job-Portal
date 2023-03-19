@@ -123,7 +123,7 @@
                 <li class="nav-item {{ request()->routeIs('user.*') ? 'active' : '' }}"><a class="d-flex align-items-center " href="{{ route('user.index') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Users</span></a>
 
                 </li>
-                <li class="nav-item"><a class="d-flex align-items-center " href="{{ route('jobs.index') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Jobs</span></a>
+                <li class="nav-item"><a class="d-flex align-items-center " href="{{ route('jobs.index') }}"><i data-feather="briefcase"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Jobs</span></a>
 
                 </li>
                 @can('role-management')
