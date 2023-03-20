@@ -57,7 +57,7 @@
                                         <th>Location</th>
                                         <th>Qualification</th>
                                         <th>Experience</th>
-                                        <th>Deadline</th>
+                                        {{-- <th>Deadline</th>
                                         <th>Apply Link</th>
                                         <th>How to apply</th>
                                         <th>Job Category</th>
@@ -68,7 +68,7 @@
                                         <th>Company Website</th>
                                         <th>Company Email</th>
                                         <th>Company Phone</th>
-                                        <th>Company Address</th>
+                                        <th>Company Address</th> --}}
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -91,7 +91,7 @@
                                             <td>{{ $job->location }}</td>
                                             <td>{{ $job->qualification }}</td>
                                             <td>{{ $job->experience }}</td>
-                                            <td>{{ $job->application_deadline }}</td>
+                                            {{-- <td>{{ $job->application_deadline }}</td>
                                             <td>{{ $job->application_link }}</td>
                                             <td>{!! $job->how_to_apply !!}</td>
                                             <td>{{ $job->job_category }}</td>
@@ -102,7 +102,7 @@
                                             <td>{{ $job->company_website }}</td>
                                             <td>{{ $job->company_email }}</td>
                                             <td>{{ $job->company_phone }}</td>
-                                            <td>{{ $job->company_address }}</td>
+                                            <td>{{ $job->company_address }}</td> --}}
                                             <td class='{{ $job->deleted_at != null ? 'text-danger' : 'text-success' }}'>
                                                 {{ $job->deleted_at != null ? 'Inactive' : 'Active' }}
                                             </td>
@@ -188,6 +188,10 @@
                                                             </div>
                                                         </section>
                                                     @else
+                                                    <a class="text-success mr-2" href="{{ route('jobs.show', $job) }}"
+                                                            data-toggle="tooltip" data-placement="top" title="Show"><i
+                                                                data-feather="eye"></i></a>
+
                                                         <a class="text-success mr-2" href="{{ route('jobs.edit', $job) }}"
                                                             data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                                 data-feather="edit"></i></a>
