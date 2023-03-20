@@ -49,7 +49,7 @@ Route::group(['middleware' => 'share-data'], function () {
 
         // Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
         // Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
-        Route::resource('jobs', JobController::class)->except('show');
+        Route::resource('jobs', JobController::class);
 
         Route::get('jobs/restore/{job}', [JobController::class, 'restore'])->name('jobs.restore');
         Route::get('jobs/forcedelete/{job}', [JobController::class, 'forceDelete'])->name('jobs.forceDelete')

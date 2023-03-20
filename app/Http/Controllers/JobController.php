@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class JobController extends Controller
 {
@@ -91,8 +92,9 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        $job = Job::find($job);
-        return view('jobs.edit',compact('job'));
+        $job = Job::findOrFail($job->id);
+        return view('jobs.edit', compact('job'));
+
     }
 
     /**
@@ -104,7 +106,55 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
-        //
+        $valid = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'salary' => ['required', 'integer', 'min:0'],
+            'location' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
+            'qualification' => ['required', 'string', 'max:255'],
+            'experience' => ['nullable', 'string', 'max:255'],
+            'application_deadline' => ['nullable', 'date', 'after_or_equal:today'],
+            'application_link' => ['nullable', 'string', 'max:255'],
+            'how_to_apply' => ['required', 'string'],
+            'job_category' => ['nullable', 'string', 'max:255'],
+            'job_level' => ['required', 'string', 'max:255'],
+            'job_nature' => ['nullable', 'string', 'max:255'],
+            'employment_status' => ['nullable', 'string', 'max:255'],
+            'company_name' => ['required', 'string', 'max:255'],
+            'company_website' => ['nullable', 'string', 'max:255'],
+            'company_email' => ['required', 'email', Rule::unique('jobs')->ignore($job->id)],
+            'company_phone' => ['required', 'string', 'max:255'],
+            'company_address' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        $job->title = $valid['title'];
+        $job->description = $valid['description'];
+        $job->salary = $valid['salary'];
+        $job->location = $valid['location'];
+        $job->type = $valid['type'];
+        $job->qualification = $valid['qualification'];
+        $job->experience = $valid['experience'];
+        $job->application_deadline = $valid['application_deadline'];
+        $job->application_link = $valid['application_link'];
+        $job->how_to_apply = $valid['how_to_apply'];
+        $job->job_category = $valid['job_category'];
+        $job->job_level = $valid['job_level'];
+        $job->job_nature = $valid['job_nature'];
+        $job->employment_status = $valid['employment_status'];
+        $job->company_name = $valid['company_name'];
+        $job->company_website = $valid['company_website'];
+        $job->company_email = $valid['company_email'];
+        $job->company_phone = $valid['company_phone'];
+        $job->company_address = $valid['company_address'];
+        $job->save();
+
+        if ($job) {
+            return redirect('/jobs')->with('toast-success', 'Job Updated Successfully');
+        }
+
+        return redirect('/jobs')->with('toast-error', 'Something wrong! please try again');
+
     }
 
     /**
