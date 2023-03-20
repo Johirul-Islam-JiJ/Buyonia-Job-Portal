@@ -91,7 +91,8 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        //
+        $job = Job::find($job);
+        return view('jobs.edit',compact('job'));
     }
 
     /**
