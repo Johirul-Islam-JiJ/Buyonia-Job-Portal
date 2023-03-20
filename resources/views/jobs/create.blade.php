@@ -202,7 +202,7 @@
                                     <div class="form-group">
                                         <label for="company_email">Company Email</label>
                                         <input class="form-control @error('company_email') is-invalid @enderror"
-                                            type="text" name="company_email" id="company_email"
+                                            type="email" name="company_email" id="company_email"
                                             value="{{ old('company_email') }}" placeholder="Company Email">
                                         @error('company_email')
                                             <div class="alert alert-danger">{{ $message }}</div>

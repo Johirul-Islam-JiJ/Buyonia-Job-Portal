@@ -44,7 +44,32 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'salary' => ['required', 'integer', 'min:0'],
+            'location' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
+            'qualification' => ['required', 'string', 'max:255'],
+            'experience' => ['nullable', 'string', 'max:255'],
+            'application_deadline' => ['nullable', 'date', 'after_or_equal:today'],
+            'application_link' => ['nullable', 'string', 'max:255'],
+            'how_to_apply' => ['required', 'string'],
+            'job_category' => ['nullable', 'string', 'max:255'],
+            'job_level' => ['required', 'string', 'max:255'],
+            'job_nature' => ['nullable', 'string', 'max:255'],
+            'employment_status' => ['nullable', 'string', 'max:255'],
+            'company_name' => ['required', 'string', 'max:255'],
+            'company_website' => ['nullable', 'string', 'max:255'],
+            'company_email' => ['required', 'email', 'unique:jobs,company_email'],
+            'company_phone' => ['required', 'string', 'max:255'],
+            'company_address' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        if (Job::create($valid));
+
+        return redirect(route('jobs.index'))->with('toast-success', 'New Job created');
+
     }
 
     /**
