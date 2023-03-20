@@ -52,23 +52,23 @@
                                         <th>S.N.</th>
                                         <th onclick="sortTable(0)" class="cursor-pointer">
                                             Title<i data-feather="arrow-up"></i><i data-feather="arrow-down"></i></th>
-                                        <th>Description</th>
-                                        <th>Salary</th>
-                                        <th>Location</th>
-                                        <th>Qualification</th>
-                                        <th>Experience</th>
-                                        {{-- <th>Deadline</th>
-                                        <th>Apply Link</th>
-                                        <th>How to apply</th>
-                                        <th>Job Category</th>
-                                        <th>Job Level</th>
-                                        <th>Job Nature</th>
-                                        <th>Employment Status</th>
+                                        {{-- <th>Description</th> --}}
+                                        {{-- <th>Salary</th> --}}
+                                        {{-- <th>Location</th> --}}
+                                        {{-- <th>Qualification</th> --}}
+                                        {{-- <th>Experience</th> --}}
+                                        <th>Deadline</th>
+                                        {{-- <th>Apply Link</th> --}}
+                                        {{-- <th>How to apply</th> --}}
+                                        {{-- <th>Job Category</th> --}}
+                                        {{-- <th>Job Level</th> --}}
+                                        {{-- <th>Job Nature</th> --}}
+                                        {{-- <th>Employment Status</th> --}}
                                         <th>Company Name</th>
-                                        <th>Company Website</th>
+                                        {{-- <th>Company Website</th> --}}
                                         <th>Company Email</th>
-                                        <th>Company Phone</th>
-                                        <th>Company Address</th> --}}
+                                        {{-- <th>Company Phone</th> --}}
+                                        {{-- <th>Company Address</th> --}}
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -79,30 +79,26 @@
                                                 {{ $loop->index + 1 }}
                                             </td>
 
-                                            <td>
-                                                {{ $job->title }}
-                                            </td>
+                                            <td>{{ $job->title }}</td>
 
-                                            <td>
-                                                {!! $job->description !!}
-                                            </td>
+                                            {{-- <td>{!! $job->description !!}</td> --}}
 
-                                            <td>{{ $job->salary }}</td>
-                                            <td>{{ $job->location }}</td>
-                                            <td>{{ $job->qualification }}</td>
-                                            <td>{{ $job->experience }}</td>
-                                            {{-- <td>{{ $job->application_deadline }}</td>
-                                            <td>{{ $job->application_link }}</td>
-                                            <td>{!! $job->how_to_apply !!}</td>
-                                            <td>{{ $job->job_category }}</td>
-                                            <td>{{ $job->job_level }}</td>
-                                            <td>{{ $job->job_nature }}</td>
-                                            <td>{{ $job->employment_status }}</td>
+                                            {{-- <td>{{ $job->salary }}</td> --}}
+                                            {{-- <td>{{ $job->location }}</td> --}}
+                                            {{-- <td>{{ $job->qualification }}</td> --}}
+                                            {{-- <td>{{ $job->experience }}</td> --}}
+                                            <td>{{ $job->application_deadline }}</td>
+                                            {{-- <td>{{ $job->application_link }}</td> --}}
+                                            {{-- <td>{!! $job->how_to_apply !!}</td> --}}
+                                            {{-- <td>{{ $job->job_category }}</td> --}}
+                                            {{-- <td>{{ $job->job_level }}</td> --}}
+                                            {{-- <td>{{ $job->job_nature }}</td> --}}
+                                            {{-- <td>{{ $job->employment_status }}</td> --}}
                                             <td>{{ $job->company_name }}</td>
-                                            <td>{{ $job->company_website }}</td>
+                                            {{-- <td>{{ $job->company_website }}</td> --}}
                                             <td>{{ $job->company_email }}</td>
-                                            <td>{{ $job->company_phone }}</td>
-                                            <td>{{ $job->company_address }}</td> --}}
+                                            {{-- <td>{{ $job->company_phone }}</td> --}}
+                                            {{-- <td>{{ $job->company_address }}</td> --}}
                                             <td class='{{ $job->deleted_at != null ? 'text-danger' : 'text-success' }}'>
                                                 {{ $job->deleted_at != null ? 'Inactive' : 'Active' }}
                                             </td>
