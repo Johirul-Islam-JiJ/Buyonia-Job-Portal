@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\UsersController;
+use App\Models\JobApplication;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,15 +48,17 @@ Route::group(['middleware' => 'share-data'], function () {
         Route::post('setting/{id}', [SiteSettingController::class, 'saveSettings'])->name('setting.update');
 
         //jobs
-
-        // Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
-        // Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
         Route::resource('jobs', JobController::class);
-
         Route::get('jobs/restore/{job}', [JobController::class, 'restore'])->name('jobs.restore');
         Route::get('jobs/forcedelete/{job}', [JobController::class, 'forceDelete'])->name('jobs.forceDelete')
-        ->can('force-delete');
+            ->can('force-delete');
 
+        //Job Application
+
+        Route::resource('applications', JobApplicationController::class);
+        Route::get('applications/restore/{jobApplication}', [JobApplicationController::class, 'restore'])->name('applications.restore');
+        Route::get('applications/forcedelete/{jobApplication}', [JobApplicationController::class, 'forceDelete'])->name('applications.forceDelete')
+            ->can('force-delete');
 
     });
 });

@@ -15,7 +15,19 @@ class CreateJobApplicationsTable extends Migration
     {
         Schema::create('job_applications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('job_id')->constrained('jobs')->cascadeOnDelete();
+            $table->string('name');
+            $table->string('image');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('portfolio');
+            $table->string('cover_letter');
+            $table->string('resume');
+            $table->string('expected_salary');
+            $table->string('notes');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
