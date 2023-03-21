@@ -16,14 +16,14 @@ class JobApplicationController extends Controller
     {
         $per_page_result = request('per_page_result') ? request('per_page_result') : 5;
 
-        $application = JobApplication::withTrashed()->where(function ($q) {
+        $jobApplication = JobApplication::withTrashed()->where(function ($q) {
             $search = request('search');
             $q->where('name', 'LIKE', "%{$search}%")
                 ->orWhere('email', 'LIKE', "%{$search}%");
         })
             ->orderBy('id', 'asc')->paginate($per_page_result);
 
-        return view('applications.index',compact('application'));
+        return view('applications.index',compact('jobApplication'));
 
     }
 
