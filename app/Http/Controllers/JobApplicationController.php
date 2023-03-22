@@ -95,9 +95,11 @@ class JobApplicationController extends Controller
             }
 
             $application = $job->applications()->create($valid);
-            if($application)
-                return redirect()->back();
-            return redirect()->back();
+            if ($application) {
+                return redirect(route('applications.index'))->with('toast-success', 'Application Completed Successfully');
+            }
+
+            return redirect()->back()->with('toast-error', 'Something went wrong');
         }
 
     }
@@ -166,7 +168,8 @@ class JobApplicationController extends Controller
         $application = Storage::disk('s3')->get($jobApplication->resume);
         return response($application)
             ->header('content-type', 'application/pdf')
-            ->headers('Content-Disposition', 'inline; filename="' . $jobApplication->resume . '"');
+            ->header('Content-Disposition', 'inline; filename="' . $jobApplication->resume . '"');
+
     }
 
     public function coverLetter(JobApplication $jobApplication)
@@ -174,7 +177,19 @@ class JobApplicationController extends Controller
         $application = Storage::disk('s3')->get($jobApplication->cover_letter);
         return response($application)
             ->header('content-type', 'application/pdf')
-            ->headers('Content-Disposition', 'inline; filename="' . $jobApplication->cover_letter . '"');
+            ->header('Content-Disposition', 'inline; filename="' . $jobApplication->cover_letter . '"');
+    }
+    public function applicationImage(JobApplication $jobApplication)
+    {
+        try {
+            $image = Storage::disk('s3')->get($jobApplication->image);
+            return response($image)
+                ->header('content-type', 'image');
+
+        } catch (\Exception$exception) {
+            return $exception->getMessage();
+        }
+
     }
 
 }

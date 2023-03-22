@@ -65,14 +65,44 @@
                                             <td>
                                                 {{ $loop->index + 1 }}
                                             </td>
-                                            <td>{{ $application->image }}</td>
+                                            <td>
+                                                <img src="{{ route('applications.image', $application) }}" width="40px" height="auto"
+                                                    alt="cover">
+                                            </td>
                                             <td>{{ $application->name }}</td>
                                             <td>{{ $application->email }}</td>
-                                            <td>{{ $application->cover_letter }}</td>
-                                            <td>{{ $application->resume }}</td>
+                                            <td>
+                                                @if ($application->deleted_at)
+                                                    <button class="btn btn-light" disabled>
+                                                        <i class="fa fa-eye" aria-hidden="true">View</i>
+                                                    </button>
+                                                @else
+                                                    <a href="{{ route('applications.coverLetter', $application) }}"
+                                                        target="_blank">
+                                                        <button class="btn btn-light">
+                                                            <i class="fa fa-eye" aria-hidden="true">View</i>
+                                                        </button>
+                                                    </a>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($application->deleted_at)
+                                                    <button class="btn btn-light" disabled>
+                                                        <i class="fa fa-eye" aria-hidden="true">View</i>
+                                                    </button>
+                                                @else
+                                                    <a href="{{ route('applications.resume', $application) }}"
+                                                        target="_blank">
+                                                        <button class="btn btn-light">
+                                                            <i class="fa fa-eye" aria-hidden="true">View</i>
+                                                        </button>
+                                                    </a>
+                                                @endif
+                                            </td>
 
 
-                                            <td class='{{ $application->deleted_at != null ? 'text-danger' : 'text-success' }}'>
+                                            <td
+                                                class='{{ $application->deleted_at != null ? 'text-danger' : 'text-success' }}'>
                                                 {{ $application->deleted_at != null ? 'Inactive' : 'Active' }}
                                             </td>
                                             <td>
@@ -80,8 +110,8 @@
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     @if ($application->deleted_at != null)
                                                         <a class="text-success mr-2"
-                                                            href="{{ route('applications.restore', $application) }}" data-toggle="tooltip"
-                                                            data-placement="top" title="Restore"><i
+                                                            href="{{ route('applications.restore', $application) }}"
+                                                            data-toggle="tooltip" data-placement="top" title="Restore"><i
                                                                 data-feather="refresh-cw"></i></a>
                                                         <section id="basic-modals p-0 m-0">
                                                             <div class="row p-0 m-0">
@@ -136,7 +166,7 @@
                                                                                                 </div>
                                                                                                 <div class="modal-footer">
                                                                                                     <a class="mr-2 btn btn-danger"
-                                                                                                        href="{{ route('applications.forceDelete', $jobApplication) }}">Delete</a>
+                                                                                                        href="{{ route('applications.forceDelete', $application) }}">Delete</a>
 
 
                                                                                                 </div>
@@ -154,15 +184,16 @@
                                                             </div>
                                                         </section>
                                                     @else
-                                                    <a class="text-success mr-2" href="#"
-                                                            data-toggle="tooltip" data-placement="top" title="Show"><i
+                                                        <a class="text-success mr-2" href="#" data-toggle="tooltip"
+                                                            data-placement="top" title="Show"><i
                                                                 data-feather="eye"></i></a>
 
-                                                        <a class="text-success mr-2" href="#"
-                                                            data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                        <a class="text-success mr-2" href="#" data-toggle="tooltip"
+                                                            data-placement="top" title="Edit"><i
                                                                 data-feather="edit"></i></a>
 
-                                                        <form action="{{ route('applications.destroy', $application) }}" method="POST">
+                                                        <form action="{{ route('applications.destroy', $application) }}"
+                                                            method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"

@@ -119,7 +119,7 @@
                             <div class="form-group">
                                 <label for="notes">Notes</label>
 
-                                <textarea class="form-control @error('notes') is-invalid @enderror" name="notes" id="notes" rows="3"
+                                <textarea class="form-control @error('notes') is-invalid @enderror" name="notes" type="text" id="notes" rows="3"
                                     placeholder="Enter Description Here">{{ old('notes') }}</textarea>
                                 @error('notes')
                                     <div class="alert alert-danger">{{ $message }}</div>
