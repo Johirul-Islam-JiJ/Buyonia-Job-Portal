@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
 
+use function Ramsey\Uuid\v1;
+
 class JobApplicationController extends Controller
 {
     /**
@@ -34,7 +36,7 @@ class JobApplicationController extends Controller
      */
     public function create()
     {
-        //
+        return view('applications.create');
     }
 
     /**

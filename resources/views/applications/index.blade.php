@@ -50,11 +50,12 @@
                                 <thead>
                                     <tr>
                                         <th>S.N.</th>
+                                        <th>Image</th>
                                         <th onclick="sortTable(0)" class="cursor-pointer">
                                             Name<i data-feather="arrow-up"></i><i data-feather="arrow-down"></i></th>
-                                        <th>Image</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
+                                        <th>Cover Letter</th>
+                                        <th>Resume</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -64,11 +65,11 @@
                                             <td>
                                                 {{ $loop->index + 1 }}
                                             </td>
-
-                                            <td>{{ $application->name }}</td>
                                             <td>{{ $application->image }}</td>
+                                            <td>{{ $application->name }}</td>
                                             <td>{{ $application->email }}</td>
-                                            <td>{{ $application->phone }}</td>
+                                            <td>{{ $application->cover_letter }}</td>
+                                            <td>{{ $application->resume }}</td>
 
 
                                             <td class='{{ $application->deleted_at != null ? 'text-danger' : 'text-success' }}'>
