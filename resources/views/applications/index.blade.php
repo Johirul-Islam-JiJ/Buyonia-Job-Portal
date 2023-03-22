@@ -19,9 +19,9 @@
                         <strong>{{ session('toast-error') }}!</strong>
                     </div>
                 @endif
-                <div class="mb-1">
+                {{-- <div class="mb-1">
                     <a class="btn btn-primary btn-sm" href="{{ route('applications.create') }}">Add New Applications</a>
-                </div>
+                </div> --}}
                 <div class="card">
 
                     <div class="card-body">
@@ -154,11 +154,11 @@
                                                             </div>
                                                         </section>
                                                     @else
-                                                    <a class="text-success mr-2" href="{{ route('applications.show', $application) }}"
+                                                    <a class="text-success mr-2" href="#"
                                                             data-toggle="tooltip" data-placement="top" title="Show"><i
                                                                 data-feather="eye"></i></a>
 
-                                                        <a class="text-success mr-2" href="{{ route('applications.edit', $application) }}"
+                                                        <a class="text-success mr-2" href="#"
                                                             data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                                 data-feather="edit"></i></a>
 

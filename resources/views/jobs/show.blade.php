@@ -91,6 +91,10 @@
                                     </tr>
                                 </thead>
                             </table>
+
+                        </div>
+                        <div class="text-center">
+                            <a class="btn btn-primary btn-sm" href="{{ route('applications.create',$job) }}">Apply Now</a>
                         </div>
 
 

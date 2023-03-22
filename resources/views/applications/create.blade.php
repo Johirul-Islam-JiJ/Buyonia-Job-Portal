@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <h1 class="text-center">Job Application Form</h1>
 
-                        <form action="{{ route('applications.store') }}" method="POST">
+                        <form action="{{ route('applications.store', $job) }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -129,8 +129,6 @@
                                 <button type="submit" class="btn btn-primary float-right">Create</button>
                                 <a href="{{ url('/applications') }}" class="btn btn-danger">Back</a>
                             </div>
-
-
                         </form>
 
                     </div>

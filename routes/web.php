@@ -55,10 +55,19 @@ Route::group(['middleware' => 'share-data'], function () {
 
         //Job Application
 
-        Route::resource('applications', JobApplicationController::class);
+        // Route::resource('applications', JobApplicationController::class);
+        Route::get('applications',[JobApplicationController::class,'index'])->name('applications.index');
+        Route::get('jobs/{job}/applications',[JobApplicationController::class,'create'])->name('applications.create');
+        Route::post('jobs/{job}/applications',[JobApplicationController::class,'store'])->name('applications.store');
+        Route::delete('jobApplication/{jobApplication}', [JobApplicationController::class, 'destroy'])->name('applications.destroy');
+
+
+
         Route::get('applications/restore/{jobApplication}', [JobApplicationController::class, 'restore'])->name('applications.restore');
         Route::get('applications/forcedelete/{jobApplication}', [JobApplicationController::class, 'forceDelete'])->name('applications.forceDelete')
             ->can('force-delete');
+        Route::get('applications/{jobApplication}/resume', [JobApplicationController::class, 'resume'])->name('applications.resume');
+        Route::get('applications/{jobApplication}/coverLetter', [JobApplicationController::class, 'coverLetter'])->name('applications.coverLetter');
 
     });
 });

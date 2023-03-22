@@ -11,6 +11,26 @@ class JobApplication extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
+    public function getImageAttribute($value): ?string
+    {
+        if($value)
+            return asset('storage/'. $value);
+
+        return null;
+    }
+    public function getResumeAttributes($value): ?string
+    {
+        if($value)
+            return asset('storage/'.$value);
+        return null;
+    }
+    public function getCoverLetterAttributes($value): ?string
+    {
+        if($value)
+            return asset('storage/'.$value);
+        return null;
+    }
+
     public function job()
     {
         return $this->belongsTo(Job::class);

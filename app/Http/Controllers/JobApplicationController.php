@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use App\Models\JobApplication;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
-
-use function Ramsey\Uuid\v1;
+use Illuminate\Support\Facades\Storage;
 
 class JobApplicationController extends Controller
 {
@@ -18,14 +20,14 @@ class JobApplicationController extends Controller
     {
         $per_page_result = request('per_page_result') ? request('per_page_result') : 5;
 
-        $jobApplication = JobApplication::withTrashed()->where(function ($q) {
+        $jobApplication = JobApplication::with('job')->withTrashed()->where(function ($q) {
             $search = request('search');
             $q->where('name', 'LIKE', "%{$search}%")
                 ->orWhere('email', 'LIKE', "%{$search}%");
         })
             ->orderBy('id', 'asc')->paginate($per_page_result);
 
-        return view('applications.index',compact('jobApplication'));
+        return view('applications.index', compact('jobApplication'));
 
     }
 
@@ -34,9 +36,10 @@ class JobApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Job $job)
     {
-        return view('applications.create');
+        $job = Job::findOrFail($job->id);
+        return view('applications.create', compact('job'));
     }
 
     /**
@@ -45,9 +48,58 @@ class JobApplicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Job $job)
     {
-        //
+        $job = Job::findOrFail($job->id);
+        $jobswithvalidationDeadline = Job::where('id', $job->id)->where('application_deadline', '>=', Carbon::today())->exists();
+
+        if ($jobswithvalidationDeadline) {
+
+            $valid = $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'image' => ['nullable', 'image', 'max:4096'],
+                'email' => ['required', 'email'],
+                'phone' => ['required', 'string', 'max:255'],
+                'address' => ['nullable', 'string', 'max:255'],
+                'portfolio' => ['nullable', 'string', 'max:255'],
+                'cover_letter' => ['nullable', 'file', 'max:8048'],
+                'resume' => ['nullable', 'file', 'max:8048'],
+                'expected_salary' => ['nullable', 'integer', 'min:0'],
+                'notes' => ['nullable', 'string', 'max:255'],
+            ]);
+
+            if ($request->hasFile('image')) {
+                try
+                {
+                    $valid['image'] = $request->file('image')->store('JobApplication', 's3');
+                } catch (Exception $exception) {
+                    return back()->with('toast-error', $exception->getMessage());
+                }
+            }
+
+            if ($request->hasFile('cover_letter')) {
+                try
+                {
+                    $valid['cover_letter'] = $request->file('cover_letter')->store('JobApplication', 's3');
+                } catch (Exception $exception) {
+                    return back()->with('toast-error', $exception->getMessage());
+                }
+            }
+            if ($request->hasFile('resume')) {
+                try
+                {
+                    $valid['resume'] = $request->file('resume')->store('JobApplication', 's3');
+                } catch (Exception $exception) {
+                    return back()->with('toast-error', $exception->getMessage());
+                }
+            }
+
+            $application = $job->applications()->create($valid);
+            if($application)
+                return redirect()->back();
+            return redirect()->back();
+        }
+
     }
 
     /**
@@ -108,4 +160,21 @@ class JobApplicationController extends Controller
         JobApplication::onlyTrashed()->find($jobApplication)->restore();
         return redirect()->back()->with('toast-success', 'Application Restored');
     }
+
+    public function resume(JobApplication $jobApplication)
+    {
+        $application = Storage::disk('s3')->get($jobApplication->resume);
+        return response($application)
+            ->header('content-type', 'application/pdf')
+            ->headers('Content-Disposition', 'inline; filename="' . $jobApplication->resume . '"');
+    }
+
+    public function coverLetter(JobApplication $jobApplication)
+    {
+        $application = Storage::disk('s3')->get($jobApplication->cover_letter);
+        return response($application)
+            ->header('content-type', 'application/pdf')
+            ->headers('Content-Disposition', 'inline; filename="' . $jobApplication->cover_letter . '"');
+    }
+
 }
