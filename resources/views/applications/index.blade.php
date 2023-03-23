@@ -66,8 +66,8 @@
                                                 {{ $loop->index + 1 }}
                                             </td>
                                             <td>
-                                                <img src="{{ route('applications.image', $application) }}" width="40px" height="auto"
-                                                    alt="cover">
+                                                <img src="{{ route('applications.image', $application) }}" width="40px"
+                                                    height="auto" alt="cover">
                                             </td>
                                             <td>{{ $application->name }}</td>
                                             <td>{{ $application->email }}</td>
@@ -184,7 +184,7 @@
                                                             </div>
                                                         </section>
                                                     @else
-                                                        <a class="text-success mr-2" href="#" data-toggle="tooltip"
+                                                        <a class="text-success mr-2" href="{{ route('applications.show', $application) }}" data-toggle="tooltip"
                                                             data-placement="top" title="Show"><i
                                                                 data-feather="eye"></i></a>
 

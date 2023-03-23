@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Models\JobApplication;
 use Carbon\Carbon;
 use Exception;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -103,6 +104,7 @@ class JobApplicationController extends Controller
         }
 
     }
+    //create route for show
 
     /**
      * Display the specified resource.
@@ -110,9 +112,13 @@ class JobApplicationController extends Controller
      * @param  \App\Models\JobApplication  $jobApplication
      * @return \Illuminate\Http\Response
      */
-    public function show(JobApplication $jobApplication)
+    public function show($jobApplication, Job $job)
     {
-        //
+
+        $jobApplication = JobApplication::findOrFail($jobApplication);
+        $job = Job::where('id', $jobApplication->job_id)->first();
+
+        return View('applications.show',compact('jobApplication','job'));
     }
 
     /**
