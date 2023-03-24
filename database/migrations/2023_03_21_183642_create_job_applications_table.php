@@ -21,11 +21,16 @@ class CreateJobApplicationsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('address');
+            $table->string('present_address');
+            $table->string('education_level');
             $table->string('portfolio');
             $table->string('cover_letter');
             $table->string('resume');
             $table->string('expected_salary');
+            $table->string('current_salary');
             $table->string('notes');
+            $table->string('github');
+            $table->string('linkdin');
             $table->timestamps();
             $table->softDeletes();
         });
