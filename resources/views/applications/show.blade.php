@@ -4,7 +4,7 @@
     <div class="app-content content">
         <div class="row match-height">
             <!-- Medal Card -->
-            <div class="col-xl-10 col-md-6 col-12 mx-auto">
+            <div class="col-xl-12 col-md-6 col-12 mx-auto">
                 <div class="card">
 
                     <div class="card-body">
@@ -20,45 +20,71 @@
                                     </tr>
 
                                     <tr>
-                                        <th>Image</th>
+                                        <th>Contact Info</th>
                                         <td>
                                             <img src="{{ route('applications.image', $jobApplication) }}" width="100px"
                                                 height="auto" alt="cover">
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Name</th>
                                         <td>
+                                            <strong>Name:</strong> <br>
                                             {{ $jobApplication->name }}
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Email</th>
                                         <td>
-                                            {{ $jobApplication->email }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Phone</th>
-                                        <td>
+                                            <strong>Email:</strong>
+                                            {{ $jobApplication->email }} <br> <br>
+                                            <strong>Phone: </strong>
                                             {{ $jobApplication->phone }}
+
                                         </td>
+
                                     </tr>
                                     <tr>
                                         <th>Address</th>
                                         <td>
-                                            {{ $jobApplication->address }}
+                                           <strong>Permanent: </strong> <br> {{ $jobApplication->address }}
+                                        </td>
+                                        <td>
+                                          <strong>Present: </strong> <br> {{ $jobApplication->present_address }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Education Level</th>
+                                        <td>
+                                            {{ $jobApplication->education_level }}
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Salary</th>
+                                        <td>
+                                            <strong>Expected: </strong> <br>
+                                            {{ $jobApplication->expected_salary }}
+                                        </td>
+                                        <td>
+                                            <strong>Current: </strong> <br>
+                                            {{ $jobApplication->current_salary }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Portfolio</th>
+                                        <th>Profiles</th>
                                         <td>
+                                            <strong>Portfolio: </strong> <br>
                                             {{ $jobApplication->portfolio }}
                                         </td>
+                                        <td>
+                                            <i data-feather="github"></i> <strong>Github: </strong> <br>
+                                            {{ $jobApplication->github }}
+                                        </td>
+                                        <td>
+                                            <i data-feather="linkedin"></i> <strong>Linkedin: </strong> <br>
+                                            {{ $jobApplication->linkdin }}
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th>Cover Letter</th>
+                                        <th>Documents</th>
                                         <td>
+                                            <strong>Cover Letter: </strong> <br>
                                             <a href="{{ route('applications.coverLetter', $jobApplication) }}"
                                                 target="_blank">
                                                 <button class="btn btn-light">
@@ -66,10 +92,8 @@
                                                 </button>
                                             </a>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Resume</th>
                                         <td>
+                                            <strong>Resume: </strong> <br>
                                             <a href="{{ route('applications.resume', $jobApplication) }}" target="_blank">
                                                 <button class="btn btn-light">
                                                     <i class="fa fa-eye" aria-hidden="true">View</i>
@@ -77,16 +101,16 @@
                                             </a>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <th>Expected Salary</th>
+                                        <th>Others</th>
                                         <td>
-                                            {{ $jobApplication->expected_salary }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Note</th>
-                                        <td>
+                                            <strong>Notes(If Any): </strong> <br>
                                             {{ $jobApplication->notes }}
+                                        </td>
+                                        <td>
+                                            <strong>Available From: </strong> <br>
+                                            {{ $jobApplication->available_joining }}
                                         </td>
                                     </tr>
                                     <tr>

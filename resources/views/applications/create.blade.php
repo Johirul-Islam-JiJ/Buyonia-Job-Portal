@@ -73,6 +73,30 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="education_level">Highest Education Level</label>
+                                        <input class="form-control @error('education_level') is-invalid @enderror" type="text"
+                                            name="education_level" id="education_level" value="{{ old('education_level') }}"
+                                            placeholder="Education Level">
+                                        @error('education_level')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="available_joining">Available From</label>
+                                        <input class="form-control @error('available_joining') is-invalid @enderror"
+                                            type="date" name="available_joining" id="available_joining"
+                                            value="{{ old('available_joining') }}">
+                                        @error('available_joining')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="current_salary">Current Salary</label>
                                         <input class="form-control @error('current_salary') is-invalid @enderror"
                                             type="number" name="current_salary" id="current_salary"
@@ -93,17 +117,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="available_joining">Available For Join</label>
-                                        <input class="form-control @error('available_joining') is-invalid @enderror"
-                                            type="date" name="available_joining" id="available_joining"
-                                            value="{{ old('available_joining') }}">
-                                        @error('available_joining')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col">
@@ -119,7 +133,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="github">Github</label>
+                                        <label for="github"><i data-feather="github" class="mr-1"></i>Github</label>
                                         <input class="form-control @error('github') is-invalid @enderror" type="text"
                                             name="github" id="github" value="{{ old('github') }}"
                                             placeholder="github">
@@ -130,7 +144,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="linkdin">Linkedin</label>
+                                        <label for="linkdin"><i data-feather="linkedin" class="mr-1"></i>Linkedin</label>
                                         <input class="form-control @error('linkdin') is-invalid @enderror" type="text"
                                             name="linkdin" id="linkdin" value="{{ old('linkdin') }}"
                                             placeholder="linkdin">
