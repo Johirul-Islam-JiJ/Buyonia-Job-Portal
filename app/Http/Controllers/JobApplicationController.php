@@ -58,15 +58,21 @@ class JobApplicationController extends Controller
 
             $valid = $request->validate([
                 'name' => ['required', 'string', 'max:255'],
-                'image' => ['nullable', 'image', 'max:4096'],
+                'image' => ['required', 'image', 'max:4096'],
                 'email' => ['required', 'email'],
                 'phone' => ['required', 'string', 'max:255'],
-                'address' => ['nullable', 'string', 'max:255'],
+                'address' => ['required', 'string', 'max:255'],
+                'present_address' => ['nullable', 'string', 'max:255'],
+                'education_level' => ['required', 'string', 'max:255'],
+                'available_joining' => ['nullable', 'date', 'after_or_equal:today'],
                 'portfolio' => ['nullable', 'string', 'max:255'],
-                'cover_letter' => ['nullable', 'file', 'max:8048'],
-                'resume' => ['nullable', 'file', 'max:8048'],
+                'cover_letter' => ['required', 'file', 'max:8048'],
+                'resume' => ['required', 'file', 'max:8048'],
+                'current_salary' => ['nullable', 'integer', 'min:0'],
                 'expected_salary' => ['nullable', 'integer', 'min:0'],
                 'notes' => ['nullable', 'string', 'max:255'],
+                'github' => ['nullable', 'string', 'max:255'],
+                'linkdin' => ['nullable', 'string', 'max:255'],
             ]);
 
             if ($request->hasFile('image')) {

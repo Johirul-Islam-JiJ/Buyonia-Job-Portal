@@ -49,6 +49,41 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="present_address">Present Address</label>
+                                        <input class="form-control @error('present_address') is-invalid @enderror"
+                                            type="text" name="present_address" id="present_address"
+                                            value="{{ old('present_address') }}" placeholder="present_address">
+                                        @error('present_address')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="address">Permanent Address</label>
+                                        <input class="form-control @error('address') is-invalid @enderror" type="text"
+                                            name="address" id="address" value="{{ old('address') }}"
+                                            placeholder="Address">
+                                        @error('address')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="current_salary">Current Salary</label>
+                                        <input class="form-control @error('current_salary') is-invalid @enderror"
+                                            type="number" name="current_salary" id="current_salary"
+                                            value="{{ old('current_salary') }}" placeholder="Enter Expected Salary">
+                                        @error('current_salary')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="expected_salary">Expected Salary</label>
                                         <input class="form-control @error('expected_salary') is-invalid @enderror"
                                             type="number" name="expected_salary" id="expected_salary"
@@ -60,6 +95,19 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="available_joining">Available For Join</label>
+                                        <input class="form-control @error('available_joining') is-invalid @enderror"
+                                            type="date" name="available_joining" id="available_joining"
+                                            value="{{ old('available_joining') }}">
+                                        @error('available_joining')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="portfolio">Portfolio</label>
                                         <input class="form-control @error('portfolio') is-invalid @enderror" type="text"
                                             name="portfolio" id="portfolio" value="{{ old('portfolio') }}"
@@ -69,17 +117,29 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="github">Github</label>
+                                        <input class="form-control @error('github') is-invalid @enderror" type="text"
+                                            name="github" id="github" value="{{ old('github') }}"
+                                            placeholder="github">
+                                        @error('github')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="linkdin">Linkedin</label>
+                                        <input class="form-control @error('linkdin') is-invalid @enderror" type="text"
+                                            name="linkdin" id="linkdin" value="{{ old('linkdin') }}"
+                                            placeholder="linkdin">
+                                        @error('linkdin')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input class="form-control @error('address') is-invalid @enderror" type="text"
-                                    name="address" id="address" value="{{ old('address') }}" placeholder="Address">
-                                @error('address')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
@@ -91,7 +151,6 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="cover_letter">Cover Letter</label>
@@ -115,12 +174,11 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="notes">Notes</label>
 
-                                <textarea class="form-control @error('notes') is-invalid @enderror" name="notes" type="text" id="notes" rows="3"
-                                    placeholder="Enter Description Here">{{ old('notes') }}</textarea>
+                                <textarea class="form-control @error('notes') is-invalid @enderror" name="notes" type="text" id="notes"
+                                    rows="3" placeholder="Enter Description Here">{{ old('notes') }}</textarea>
                                 @error('notes')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
