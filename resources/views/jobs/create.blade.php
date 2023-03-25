@@ -1,5 +1,10 @@
 @extends('layouts.main')
 @section('content')
+<style>
+    .required {
+  color: red;
+}
+</style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
 
@@ -16,7 +21,7 @@
                         <form action="{{ route('jobs.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="title">Job Title</label>
+                                <label for="title">Job Title<span class="required">*</span></label>
                                 <input class="form-control @error('title') is-invalid @enderror" type="text"
                                     name="title" id="title" value="{{ old('title') }}"
                                     placeholder="Enter Title Here">
@@ -25,7 +30,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="description">Job Description</label>
+                                <label for="description">Job Description<span class="required">*</span></label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
                                     rows="5" placeholder="Enter Description Here">{{ old('description') }}</textarea>
 
@@ -45,7 +50,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="location">Job Location</label>
+                                <label for="location">Job Location<span class="required">*</span></label>
                                 <input class="form-control @error('location') is-invalid @enderror" type="text"
                                     name="location" id="location" value="{{ old('location') }}"
                                     placeholder="Enter Location Here">
@@ -80,7 +85,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="application_deadline">Deadline</label>
+                                        <label for="application_deadline">Deadline<span class="required">*</span></label>
                                         <input class="form-control @error('application_deadline') is-invalid @enderror"
                                             type="date" name="application_deadline" id="application_deadline"
                                             value="{{ old('application_deadline') }}">
@@ -94,7 +99,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="qualification">Job Qualification</label>
+                                        <label for="qualification">Job Qualification<span class="required">*</span></label>
                                         <input class="form-control @error('qualification') is-invalid @enderror"
                                             type="text" name="qualification" id="qualification"
                                             value="{{ old('qualification') }}" placeholder="Enter Job Qualification">
@@ -175,7 +180,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="company_name">Company Name</label>
+                                        <label for="company_name">Company Name<span class="required">*</span></label>
                                         <input class="form-control @error('company_name') is-invalid @enderror"
                                             type="text" name="company_name" id="company_name"
                                             value="{{ old('company_name') }}" placeholder="Company Name">
@@ -200,7 +205,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="company_email">Company Email</label>
+                                        <label for="company_email">Company Email<span class="required">*</span></label>
                                         <input class="form-control @error('company_email') is-invalid @enderror"
                                             type="email" name="company_email" id="company_email"
                                             value="{{ old('company_email') }}" placeholder="Company Email">
@@ -211,7 +216,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="company_phone">Company Phone</label>
+                                        <label for="company_phone">Company Phone<span class="required">*</span></label>
                                         <input class="form-control @error('company_phone') is-invalid @enderror"
                                             type="text" name="company_phone" id="company_phone"
                                             value="{{ old('company_phone') }}" placeholder="Company Phone">
@@ -222,7 +227,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                        <label for="company_address">Company Address</label>
+                                        <label for="company_address">Company Address<span class="required">*</span></label>
                                         <input class="form-control @error('company_address') is-invalid @enderror"
                                             type="text" name="company_address" id="company_address"
                                             value="{{ old('company_address') }}" placeholder="Company Address">
@@ -236,7 +241,9 @@
                                 <a href="{{ url('/jobs') }}" class="btn btn-danger">Back</a>
                             </div>
 
-
+                            <h6 class="text-center">
+                                Note: <strong class="required">*</strong> Marked Fields Are Required
+                            </h6>
                         </form>
 
                     </div>

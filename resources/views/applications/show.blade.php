@@ -34,7 +34,6 @@
                                             {{ $jobApplication->email }} <br> <br>
                                             <strong>Phone: </strong>
                                             {{ $jobApplication->phone }}
-
                                         </td>
 
                                     </tr>

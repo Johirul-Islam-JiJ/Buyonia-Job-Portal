@@ -1,5 +1,10 @@
 @extends('layouts.main')
 @section('content')
+<style>
+    .required {
+  color: red;
+}
+</style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
 
@@ -17,7 +22,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name">Name<span class="required">*</span></label>
                                 <input class="form-control @error('name') is-invalid @enderror" type="text"
                                     name="name" id="name" value="{{ old('name') }}" placeholder="Name">
                                 @error('name')
@@ -27,7 +32,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="email">Email</label>
+                                        <label for="email">Email<span class="required">*</span></label>
                                         <input class="form-control @error('email') is-invalid @enderror" type="email"
                                             name="email" id="email" value="{{ old('email') }}" placeholder="Email">
                                         @error('email')
@@ -37,7 +42,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="phone">Phone</label>
+                                        <label for="phone">Phone<span class="required">*</span></label>
                                         <input class="form-control @error('phone') is-invalid @enderror" type="text"
                                             name="phone" id="phone" value="{{ old('phone') }}" placeholder="Phone">
                                         @error('phone')
@@ -60,7 +65,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="address">Permanent Address</label>
+                                        <label for="address">Permanent Address<span class="required">*</span></label>
                                         <input class="form-control @error('address') is-invalid @enderror" type="text"
                                             name="address" id="address" value="{{ old('address') }}"
                                             placeholder="Address">
@@ -73,7 +78,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="education_level">Highest Education Level</label>
+                                        <label for="education_level">Highest Education Level<span class="required">*</span></label>
                                         <input class="form-control @error('education_level') is-invalid @enderror" type="text"
                                             name="education_level" id="education_level" value="{{ old('education_level') }}"
                                             placeholder="Education Level">
@@ -157,7 +162,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="image">Image</label>
+                                        <label for="image">Image<span class="required">*</span></label>
                                         <input class="form-control @error('image') is-invalid @enderror" type="file"
                                             name="image" id="image" value="{{ old('image') }}">
                                         @error('image')
@@ -167,7 +172,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="cover_letter">Cover Letter</label>
+                                        <label for="cover_letter">Cover Letter<span class="required">*</span></label>
                                         <input class="form-control @error('cover_letter') is-invalid @enderror"
                                             type="file" name="cover_letter" id="cover_letter"
                                             value="{{ old('cover_letter') }}">
@@ -179,7 +184,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="resume">Resume</label>
+                                        <label for="resume">Resume<span class="required">*</span></label>
                                         <input class="form-control @error('resume') is-invalid @enderror" type="file"
                                             name="resume" id="resume" value="{{ old('resume') }}">
                                         @error('resume')
@@ -201,6 +206,9 @@
                                 <button type="submit" class="btn btn-primary float-right">Create</button>
                                 <a href="{{ url('/applications') }}" class="btn btn-danger">Back</a>
                             </div>
+                            <h6 class="text-center">
+                                Note: <strong class="required">*</strong> Marked Fields Are Required
+                            </h6>
                         </form>
 
                     </div>
