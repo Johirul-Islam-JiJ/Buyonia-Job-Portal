@@ -1,10 +1,15 @@
 @extends('layouts.main')
 @section('content')
-<style>
-    .required {
-  color: red;
-}
-</style>
+    <style>
+        .required {
+            color: red;
+        }
+
+        .ck-editor__editable {
+            height: 7em;
+            /* Set the height to show 5 rows of text */
+        }
+    </style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
 
@@ -31,14 +36,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Job Description<span class="required">*</span></label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                                    rows="5" placeholder="Enter Description Here">{{ old('description') }}</textarea>
-
+                                <textarea class="form-control resizable" name="description" id="description" rows="5"
+                                    placeholder="Enter Description Here">{{ old('description') }}</textarea>
                                 @error('description')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-
 
                             <div class="form-group">
                                 <label for="salary">Job Salary</label>
@@ -122,9 +125,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="how_to_apply">How To Apply</label>
-
-                                <textarea class="form-control @error('how_to_apply') is-invalid @enderror" name="how_to_apply" id="how_to_apply"
-                                    rows="5" placeholder="Enter Description Here">{{ old('how_to_apply') }}</textarea>
+                                <textarea class="form-control resizable" name="how_to_apply" id="how_to_apply" rows="5"
+                                    placeholder="Enter Instruction">{{ old('how_to_apply') }}</textarea>
                                 @error('how_to_apply')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -227,24 +229,30 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                        <label for="company_address">Company Address<span class="required">*</span></label>
-                                        <input class="form-control @error('company_address') is-invalid @enderror"
-                                            type="text" name="company_address" id="company_address"
-                                            value="{{ old('company_address') }}" placeholder="Company Address">
-                                        @error('company_address')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                <label for="company_address">Company Address<span class="required">*</span></label>
+                                <input class="form-control @error('company_address') is-invalid @enderror" type="text"
+                                    name="company_address" id="company_address" value="{{ old('company_address') }}"
+                                    placeholder="Company Address">
+                                @error('company_address')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
 
                             <div>
-                                <button type="submit" class="btn btn-primary float-right">Create</button>
+
+                                <button type="submit" class="btn btn-success float-right">Create</button>
                                 <a href="{{ url('/jobs') }}" class="btn btn-danger">Back</a>
+
+                                <div style="text-align: center;">
+                                    <button class="btn btn-primary mb-2" onclick="callvalue()">Preview</button>
+                                </div>
                             </div>
 
                             <h6 class="text-center">
                                 Note: <strong class="required">*</strong> Marked Fields Are Required
                             </h6>
                         </form>
+
 
                     </div>
                 </div>
@@ -253,25 +261,71 @@
         </div>
 
         <script>
-            ClassicEditor.create(document.querySelector('textarea[name="description"]'))
-                .then(description => {
-                    console.log(description);
+            ClassicEditor
+                .create(document.querySelector('#description'), {
+                    toolbar: ['bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote'],
+                    placeholder: 'Enter Description Here',
+                    rows: 5,
+                    language: 'en'
                 })
                 .catch(error => {
                     console.error(error);
                 });
 
-            ClassicEditor.create(document.querySelector('textarea[name="how_to_apply"]'))
-                .then(how_to_apply => {
-                    console.log(how_to_apply);
+            ClassicEditor
+                .create(document.querySelector('#how_to_apply'), {
+                    toolbar: ['bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote'],
+                    placeholder: 'Enter Description Here',
+                    rows: 5,
+                    language: 'en'
                 })
+
                 .catch(error => {
                     console.error(error);
                 });
+
+            function callvalue() {
+                var title = document.getElementById("title").value;
+                var description = document.getElementById("description").value;
+                var salary = document.getElementById("salary").value;
+                var location = document.getElementById("location").value;
+                var type = document.getElementById("type").value;
+                var qualification = document.getElementById("qualification").value;
+                var experience = document.getElementById("experience").value;
+                var application_deadline = document.getElementById("application_deadline").value;
+                var application_link = document.getElementById("application_link").value;
+                var how_to_apply = document.getElementById("how_to_apply").value;
+                var job_category = document.getElementById("job_category").value;
+                var job_level = document.getElementById("job_level").value;
+                var job_nature = document.getElementById("job_nature").value;
+                var employment_status = document.getElementById("employment_status").value;
+                var company_name = document.getElementById("company_name").value;
+                var company_website = document.getElementById("company_website").value;
+                var company_email = document.getElementById("company_email").value;
+                var company_phone = document.getElementById("company_phone").value;
+                var company_address = document.getElementById("company_address").value;
+
+                document.writeln("Job Title: " + title);
+                document.writeln("Description: " + description);
+                document.writeln("Salary: " + salary);
+                document.writeln("Location: " + location);
+                document.writeln("Type: " + type);
+                document.writeln("Qualification: " + qualification);
+                document.writeln("Experience: " + experience);
+                document.writeln("Application Deadline: " + application_deadline);
+                document.writeln("Application Link: " + application_link);
+                document.writeln("How to apply: " + how_to_apply);
+                document.writeln("Job Category: " + job_category);
+                document.writeln("Job Level: " + job_level);
+                document.writeln("Job Nature: " + job_nature);
+                document.writeln("Employment Status: " + employment_status);
+                document.writeln("Company Name: " + company_name);
+                document.writeln("Company Website: " + company_website);
+                document.writeln("Company Email: " + company_email);
+                document.writeln("Company Phone: " + company_phone);
+                document.writeln("Company Address: " + company_address);
+            }
         </script>
-
-
         <!-- END: Content-->
-
     </div>
 @endsection
