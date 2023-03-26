@@ -15,6 +15,7 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('department_id')->nullable()->constrained('departments')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->integer('salary')->nullable();
@@ -36,8 +37,6 @@ class CreateJobsTable extends Migration
             $table->string('company_address');
             $table->timestamps();
             $table->softDeletes();
-
-
         });
     }
 

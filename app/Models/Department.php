@@ -7,19 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Job extends Model
+class Department extends Model
 {
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
-    public function applications(): HasMany
+    public function jobs(): HasMany
     {
-        return $this->hasMany(JobApplication::class);
-    }
-
-    public function department()
-    {
-        return $this->belongsTo(Department::class);
+        return $this->hasMany(Job::class);
     }
 
 }
