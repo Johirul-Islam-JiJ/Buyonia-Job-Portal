@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -34,7 +35,8 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('jobs.create');
+        $department = Department::orderBy('name','asc')->get();
+        return view('jobs.create',compact('department'));
     }
 
     /**
@@ -46,13 +48,17 @@ class JobController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
+            'department_id'=>['required'],
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'salary' => ['nullable', 'integer', 'min:0'],
             'location' => ['required', 'string', 'max:255'],
             'type' => ['nullable', 'string', 'max:255'],
-            'qualification' => ['required', 'string', 'max:255'],
+            'qualification' => ['required', 'string','max:255'],
             'experience' => ['nullable', 'string', 'max:255'],
+            'working_hours' => ['nullable', 'string', 'max:255'],
+            'Weekend' => ['nullable', 'string', 'max:255'],
+            'vacancy' => ['nullable', 'string', 'max:255'],
             'application_deadline' => ['required', 'date', 'after_or_equal:today'],
             'application_link' => ['nullable', 'string', 'max:255'],
             'how_to_apply' => ['nullable', 'string'],
@@ -62,7 +68,7 @@ class JobController extends Controller
             'employment_status' => ['nullable', 'string', 'max:255'],
             'company_name' => ['required', 'string', 'max:255'],
             'company_website' => ['nullable', 'string', 'max:255'],
-            'company_email' => ['required', 'email', 'unique:jobs,company_email'],
+            'company_email' => ['required', 'email'],                  //'unique:jobs,company_email'
             'company_phone' => ['required', 'string', 'max:255'],
             'company_address' => ['required', 'string', 'max:255'],
         ]);
@@ -79,10 +85,11 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show(Job $job, Department $department)
     {
+        $department = Department::where('id', $job->department_id)->get();
         $job = Job::findOrFail($job->id);
-        return view('jobs.show', compact('job'));
+        return view('jobs.show', compact('job','department'));
 
     }
 
@@ -94,8 +101,9 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
+        $department = Department::where('id', $job->department_id)->get();
         $job = Job::findOrFail($job->id);
-        return view('jobs.edit', compact('job'));
+        return view('jobs.edit', compact('job','department'));
 
     }
 
@@ -114,7 +122,7 @@ class JobController extends Controller
             'salary' => ['required', 'integer', 'min:0'],
             'location' => ['required', 'string', 'max:255'],
             'type' => ['required', 'string', 'max:255'],
-            'qualification' => ['required', 'string', 'max:255'],
+            'qualification' => ['required', 'string','max:255'],
             'experience' => ['nullable', 'string', 'max:255'],
             'application_deadline' => ['nullable', 'date', 'after_or_equal:today'],
             'application_link' => ['nullable', 'string', 'max:255'],
@@ -125,7 +133,7 @@ class JobController extends Controller
             'employment_status' => ['nullable', 'string', 'max:255'],
             'company_name' => ['required', 'string', 'max:255'],
             'company_website' => ['nullable', 'string', 'max:255'],
-            'company_email' => ['required', 'email', Rule::unique('jobs')->ignore($job->id)],
+            'company_email' => ['required', 'email'],     // Rule::unique('jobs')->ignore($job->id)
             'company_phone' => ['required', 'string', 'max:255'],
             'company_address' => ['nullable', 'string', 'max:255'],
         ]);

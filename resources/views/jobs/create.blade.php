@@ -26,6 +26,17 @@
                         <form action="{{ route('jobs.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
+                                <label for="department_id">Department<span class="required">*</span></label>
+                                <select class="form-select form-control mb-3" name="department_id" id="department_id"
+                                    onchange="validateDepartment()">
+                                    <option selected>Select Division...</option>
+                                    @foreach ($department as $dep)
+                                        <option value="{{ $dep->id }}">{{ $dep->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="title">Job Title<span class="required">*</span></label>
                                 <input class="form-control @error('title') is-invalid @enderror" type="text"
                                     name="title" id="title" value="{{ old('title') }}"
@@ -182,6 +193,41 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="working_hours">Working Hours</label>
+                                        <input class="form-control @error('working_hours') is-invalid @enderror"
+                                            type="text" name="working_hours" id="working_hours"
+                                            value="{{ old('working_hours') }}" placeholder="Working Hours">
+                                        @error('working_hours')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="Weekend">Weekend</label>
+                                        <input class="form-control @error('Weekend') is-invalid @enderror" type="text"
+                                            name="Weekend" id="Weekend" value="{{ old('Weekend') }}"
+                                            placeholder="Weekend">
+                                        @error('Weekend')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="vacancy">Vacancy</label>
+                                        <input class="form-control @error('vacancy') is-invalid @enderror" type="text"
+                                            name="vacancy" id="vacancy" value="{{ old('vacancy') }}"
+                                            placeholder="Vacancy">
+                                        @error('vacancy')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="company_name">Company Name<span class="required">*</span></label>
                                         <input class="form-control @error('company_name') is-invalid @enderror"
                                             type="text" name="company_name" id="company_name"
@@ -324,6 +370,14 @@
                 document.writeln("Company Email: " + company_email);
                 document.writeln("Company Phone: " + company_phone);
                 document.writeln("Company Address: " + company_address);
+            }
+
+            function validateDepartment() {
+                var departmentSelect = document.getElementById("department_id");
+                if (departmentSelect.value === "Select Division...") {
+                    alert("Please select a valid department.");
+                    departmentSelect.value = "";
+                }
             }
         </script>
         <!-- END: Content-->

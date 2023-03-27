@@ -18,13 +18,16 @@ class CreateJobsTable extends Migration
             $table->foreignId('department_id')->nullable()->constrained('departments')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
-            $table->integer('salary')->nullable();
+            $table->string('salary')->nullable();
             $table->string('location');
             $table->string('type')->nullable();
             $table->string('qualification');
             $table->string('experience')->nullable();
+            $table->string('working_hours')->nullable();
+            $table->string('Weekend')->nullable();
             $table->date('application_deadline');
             $table->string('application_link')->nullable();
+            $table->string('vacancy')->nullable();
             $table->text('how_to_apply')->nullable();
             $table->string('job_category')->nullable();
             $table->string('job_level')->nullable();

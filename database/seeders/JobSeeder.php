@@ -15,7 +15,7 @@ class JobSeeder extends Seeder
     public function run()
     {
         $job = new Job();
-
+        $job->department_id = '1';
         $job->title = 'Software Engineer';
         $job->description = 'We need an web developer with in hand working experienced in Software Company and several Projects';
         $job->salary = '25000';
@@ -23,6 +23,9 @@ class JobSeeder extends Seeder
         $job->type = 'Full Time';
         $job->qualification = 'BSc in CSE,SWE,CE and equivalent Degree from  Reputed University';
         $job->experience = '2 Years';
+        $job->working_hours = '10:00 AM - 5:00 PM';
+        $job->Weekend = 'Friday to Sunday';
+        $job->vacancy = '08';
         $job->application_deadline = '2023-06-30';
         $job->application_link = 'https: //docs.google.com/forms/u/0/d/1d76oIOHOcIi3CDvnH-
         SHsuuNNwllLKInQmMPzwU8P0M/edit?ntd=1&usp=forms_home&ths=true';

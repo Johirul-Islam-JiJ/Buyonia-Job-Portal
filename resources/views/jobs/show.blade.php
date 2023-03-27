@@ -14,6 +14,12 @@
                             <table class="table text-left" id="myTable">
                                 <thead>
                                     <tr>
+                                        <th>Department Name</th>
+                                        <td>
+                                            {{ $job->department->name }}
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th>Job Title</th>
                                         <td>
                                             {{ $job->title }}
@@ -42,8 +48,20 @@
                                         <td>{{ $job->experience }}</td>
                                     </tr>
                                     <tr>
+                                        <th>Working Hours</th>
+                                        <td>{{ $job->working_hours }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Weekend</th>
+                                        <td>{{ $job->Weekend }}</td>
+                                    </tr>
+                                    <tr>
                                         <th>Application Deadline</th>
                                         <td>{{ $job->application_deadline }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Vacancy</th>
+                                        <td>{{ $job->vacancy }}</td>
                                     </tr>
                                     <tr>
                                         <th>Application Link</th>
