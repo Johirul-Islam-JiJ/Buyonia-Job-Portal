@@ -152,6 +152,10 @@
                         href="{{ route('applications.index') }}"><i data-feather="clipboard"></i><span
                             class="menu-title text-truncate" data-i18n="Dashboards">Applications</span></a>
                 </li>
+                <li class="nav-item"><a class="d-flex align-items-center "
+                        href="{{ route('resume.index') }}"><i data-feather="book-open"></i><span
+                            class="menu-title text-truncate" data-i18n="Dashboards">Resume Builder</span></a>
+                </li>
                 <li class="nav-item {{ request()->routeIs('user.*') ? 'active' : '' }}"><a
                         class="d-flex align-items-center " href="{{ route('user.index') }}"><i
                             data-feather="user"></i><span class="menu-title text-truncate"

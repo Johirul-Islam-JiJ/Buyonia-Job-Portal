@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\UsersController;
@@ -72,6 +73,10 @@ Route::group(['middleware' => 'share-data'], function () {
         Route::get('department/restore/{department}', [DepartmentController::class, 'restore'])->name('department.restore');
         Route::get('department/forcedelete/{department}', [DepartmentController::class, 'forceDelete'])->name('department.forceDelete')
             ->can('force-delete');
+
+        //Resumes
+
+        Route::resource('resume', ResumeController::class);
 
 
     });
