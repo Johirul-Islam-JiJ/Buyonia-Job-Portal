@@ -14,7 +14,16 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+
+        $per_page_result = request('per_page_result') ? request('per_page_result') : 5;
+
+        $department = Department::withTrashed()->where(function ($q) {
+            $search = request('search');
+            $q->where('name', 'LIKE', "%{$search}%");
+        })
+            ->orderBy('id', 'asc')->paginate($per_page_result);
+
+        return view('department.index', compact('department'));
     }
 
     /**

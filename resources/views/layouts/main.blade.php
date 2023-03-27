@@ -143,10 +143,15 @@
                 <li class="nav-item"><a class="d-flex align-items-center " href="{{ route('jobs.index') }}"><i
                             data-feather="briefcase"></i><span class="menu-title text-truncate"
                             data-i18n="Dashboards">Jobs</span></a>
+                </li>
+                <li class="nav-item"><a class="d-flex align-items-center "
+                        href="{{ route('department.index') }}"><i data-feather="layers"></i><span
+                            class="menu-title text-truncate" data-i18n="Dashboards">Department</span></a>
+                </li>
                 <li class="nav-item"><a class="d-flex align-items-center "
                         href="{{ route('applications.index') }}"><i data-feather="clipboard"></i><span
                             class="menu-title text-truncate" data-i18n="Dashboards">Applications</span></a>
-
+                </li>
                 <li class="nav-item {{ request()->routeIs('user.*') ? 'active' : '' }}"><a
                         class="d-flex align-items-center " href="{{ route('user.index') }}"><i
                             data-feather="user"></i><span class="menu-title text-truncate"
