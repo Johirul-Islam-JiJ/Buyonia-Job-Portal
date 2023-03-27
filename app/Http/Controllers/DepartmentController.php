@@ -33,7 +33,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('department.create');
     }
 
     /**
@@ -44,7 +44,14 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        if (Department::create($valid));
+
+        return redirect(route('department.index'))->with('toast-success', 'New Department created');
+
     }
 
     /**
@@ -89,6 +96,8 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        //
+        $department->delete();
+        return redirect()->back()->with('toast-success', 'Department deleted');
+
     }
 }
