@@ -23,7 +23,7 @@ class ResumeController extends Controller
         })
             ->orderBy('id', 'asc')->paginate($per_page_result);
 
-        return view('resumes.index',compact('resumes'));
+        return view('resumes.index', compact('resumes'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ResumeController extends Controller
      */
     public function create()
     {
-        //
+        return view('resumes.create');
     }
 
     /**
