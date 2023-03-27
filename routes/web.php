@@ -69,5 +69,10 @@ Route::group(['middleware' => 'share-data'], function () {
         //Department
 
         Route::resource('department', DepartmentController::class);
+        Route::get('department/restore/{department}', [DepartmentController::class, 'restore'])->name('department.restore');
+        Route::get('department/forcedelete/{department}', [DepartmentController::class, 'forceDelete'])->name('department.forceDelete')
+            ->can('force-delete');
+
+
     });
 });

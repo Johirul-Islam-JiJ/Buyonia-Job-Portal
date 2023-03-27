@@ -65,7 +65,7 @@
 
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     @if ($dep->deleted_at != null)
-                                                        <a class="text-success mr-2" href="#" data-toggle="tooltip"
+                                                        <a class="text-success mr-2" href="{{ route('department.restore',$dep) }}" data-toggle="tooltip"
                                                             data-placement="top" title="Restore"><i
                                                                 data-feather="refresh-cw"></i></a>
                                                         <section id="basic-modals p-0 m-0">
@@ -75,8 +75,6 @@
 
                                                                         <div class="card-body p-0 m-0">
                                                                             <div class="demo-inline-spacing">
-
-
                                                                                 <!-- Vertical modal -->
                                                                                 <div class="vertical-modal-ex p-0 m-0">
                                                                                     <button type="button"
@@ -120,13 +118,8 @@
                                                                                                     </p>
                                                                                                 </div>
                                                                                                 <div class="modal-footer">
-
-
-                                                                                                    {{--                                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"> --}}
                                                                                                     <a class="mr-2 btn btn-danger"
-                                                                                                        href="#">Delete</a>
-
-
+                                                                                                        href="{{ route('department.forceDelete',$dep) }}">Delete</a>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>

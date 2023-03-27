@@ -73,7 +73,9 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        //
+        $department = Department::findOrFail($department->id);
+        return view('department.edit', compact('department'));
+
     }
 
     /**
@@ -85,7 +87,19 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        //
+        $valid = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        $department->name = $valid['name'];
+        $department->save();
+
+        if ($department) {
+            return redirect('/department')->with('toast-success', 'Department Updated Successfully');
+        }
+
+        return redirect('/department')->with('toast-error', 'Something wrong! please try again');
+
     }
 
     /**
@@ -99,5 +113,15 @@ class DepartmentController extends Controller
         $department->delete();
         return redirect()->back()->with('toast-success', 'Department deleted');
 
+    }
+    public function restore($department)
+    {
+        Department::onlyTrashed()->find($department)->restore();
+        return redirect()->back()->with('toast-success', 'Department Restored');
+    }
+    public function forceDelete($department)
+    {
+        Department::onlyTrashed()->find($department)->forceDelete();
+        return redirect()->back()->with('toast-success', 'Department Permanently Deleted');
     }
 }
