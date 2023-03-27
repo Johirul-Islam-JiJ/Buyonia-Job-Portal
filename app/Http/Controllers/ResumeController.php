@@ -14,7 +14,16 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        return view('resumes.index');
+        $per_page_result = request('per_page_result') ? request('per_page_result') : 5;
+
+        $resumes = Resume::withTrashed()->where(function ($q) {
+            $search = request('search');
+            $q->where('name', 'LIKE', "%{$search}%")
+                ->orWhere('primary_email', 'LIKE', "%{$search}%");
+        })
+            ->orderBy('id', 'asc')->paginate($per_page_result);
+
+        return view('resumes.index',compact('resumes'));
     }
 
     /**
