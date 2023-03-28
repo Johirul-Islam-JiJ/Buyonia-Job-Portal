@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'share-data'], function () {
-    Route::get('/', function () {
+    Route::get('/login', function () {
         return view('auth.login');
     });
     Auth::routes();
@@ -80,4 +81,6 @@ Route::group(['middleware' => 'share-data'], function () {
 
 
     });
+
+    Route::get('/',[FrontendController::class,'index'])->name('homepage');
 });

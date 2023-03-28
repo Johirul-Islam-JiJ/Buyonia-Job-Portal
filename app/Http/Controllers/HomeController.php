@@ -33,4 +33,6 @@ class HomeController extends Controller
     public function users(){
         return view('users.index');
     }
+
+
 }
