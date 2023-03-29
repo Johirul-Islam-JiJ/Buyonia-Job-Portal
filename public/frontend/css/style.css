@@ -40,6 +40,30 @@ body {
 .get-started p {
     color: #0033cc;
 }
+.hero-message {
+    width: 776px;
+    height: 60px;
+    left: 325px;
+    top: 404px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.hero-message p {
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #1f1f1f;
+}
+.search-box {
+    width: 628px;
+    height: 65px;
+
+    background: #ffffff;
+    border-radius: 5px;
+}
 /* end hero */
 h1 {
     font-family: "Inter";
