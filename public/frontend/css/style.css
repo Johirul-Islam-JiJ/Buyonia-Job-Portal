@@ -29,48 +29,14 @@ body {
     text-align: center;
     height: 100vh;
 }
-.get-started {
-    width: 30%;
-    height: 48px;
-    background: rgba(203, 216, 255, 0.4);
-    border-radius: 30px;
-    padding-top: 12px;
-    margin: 0 auto;
-}
-.get-started p {
-    color: #0033cc;
-}
-.hero-message {
-    width: 776px;
-    height: 60px;
-    left: 325px;
-    top: 404px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-}
-
-.hero-message p {
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: #1f1f1f;
-}
-.search-box {
-    width: 628px;
-    height: 65px;
-
-    background: #ffffff;
-    border-radius: 5px;
-}
-/* end hero */
 h1 {
     font-family: "Inter";
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
     line-height: 67px;
+    margin-bottom: 30px;
+
     /* or 140% */
 
     text-align: center;
@@ -80,6 +46,62 @@ h1 {
 
     color: #1f1f1f;
 }
+.get-started {
+    width: 30%;
+    height: 48px;
+    background: rgba(203, 216, 255, 0.4);
+    border-radius: 30px;
+    padding-top: 12px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.get-started p {
+    color: #0033cc;
+}
+.hero-message {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    width: 60%;
+    height: 48px;
+    padding-top: 12px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.hero-message p {
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #1f1f1f;
+}
+.hero-search-box {
+    background: #ffffff;
+    border-radius: 5px;
+    width: 40%;
+    height: 48px;
+    border-radius: 30px;
+    padding-top: 12px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.hero-search-box ::placeholder {
+    width: 245px;
+    height: 19px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    /* Primary */
+    color: #0033cc;
+    opacity: 0.35;
+}
+
+/* end hero */
 
 /* Start Navbar */
 .brand-logo {
@@ -121,3 +143,17 @@ a.nav-link.nav-list.nav-font-color {
     color: #0033cc !important;
 }
 /* End Navbar */
+
+/* Explore Job Section Start */
+
+.explore-job {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
