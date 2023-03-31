@@ -48,41 +48,31 @@
             <p>
                 Get the fastest application so that your name is above other application
         </div>
-        <div class="category">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid justify-content-center">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Recent Jobs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Web Developer</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Graphic Designer</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Digital Marketer</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Mobile App Developer</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
         <div>
+            <ul class="category">
+                <li class="category-link-active">
+                    <a class="category-link" aria-current="page" href="#">Recent Jobs</a>
+                </li>
+                <li class="category-item">
+                    <a class="category-link" href="#">Web Developer</a>
+                </li>
+                <li class="category-item">
+                    <a class="category-link" href="#">Graphic Designer</a>
+                </li>
+                <li class="category-item">
+                    <a class="category-link" href="#">Digital Marketer</a>
+                </li>
+                <li class="category-item">
+                    <a class="category-link" href="#">Mobile App Developer</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-grid-list">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
+                            <h5 class="card-title">UI/UX Designer</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -91,7 +81,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
+                            <h5 class="card-title">Mobile App Dev</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -102,7 +92,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
+                            <h5 class="card-title">UI/UX Designer</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -111,7 +101,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
+                            <h5 class="card-title">Mobile App Dev</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
@@ -119,28 +109,32 @@
                 </div>
             </div>
         </div>
-        <div>
-            <button class="btn btn-primary">Load More</button>
+        <div class="load-more">
+            <a class="" href="#">Load More</a>
         </div>
-        <div>
+        <div class="register-msg-img">
             <div class="row">
                 <div class="col-sm-6">
-                    <div>
+                    <div class="register-msg">
                         <h1>
-                            So Many People are engaged all over the world
+                            So Many People Are <br>
+                            <span class="text-primary">Engaged</span> All Over The World
                         </h1>
+                        <p> Et in sapien enim congue interdum pulvinar non sed. Ac augue netus tellus semper.Et in sapien
+                            enim congue interdum pulvinar non sed.
+                            Ac augue netus tellus semper. </p>
+                        <img src="frontend/images/Vector.png" alt="">
+
+                    </div>
+                    <div class="register-today">
+                        <a class="" href="#">Register Today</a>
                     </div>
 
-                    <div class="hero-message">
-                        <p>
-                            Et in sapien enim congue interdum pulvinar non sed. Ac augue netus tellus semper.
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Register Today</button>
-                    </div>
                 </div>
                 <div class="col-sm-6">
-                    <img src="" alt="image">
+                    <div class="register-img">
+                        <img src="frontend/images/register.png" alt="image">
+                    </div>
                 </div>
             </div>
         </div>
