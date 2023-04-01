@@ -19,7 +19,7 @@
                     </span>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="">Apply Now</a>
+                    <a href="{{ route('applications.create',$job) }}">Apply Now</a>
                 </div>
             </div>
             <div class="show-job-img">
@@ -64,7 +64,7 @@
                 <div class="col-md-4">
                     <div class="job-details-show-info-right">
                         <div class="d-flex justify-content-center">
-                            <a href="">Apply Now</a>
+                            <a href="{{ route('applications.create',$job) }}">Apply Now</a>
                         </div>
                         <h5>Job Summary</h5>
                         <div class="job-details-show-info-right-body">

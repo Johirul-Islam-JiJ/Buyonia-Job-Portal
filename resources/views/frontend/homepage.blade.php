@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
     </section>
     <section class="align-center">
         <div class="container">
