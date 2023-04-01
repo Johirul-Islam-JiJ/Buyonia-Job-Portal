@@ -72,35 +72,38 @@
                 <div class="row">
                     @foreach ($jobs as $job)
                         <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="card-title">{{ $job->title }}</h5>
-                                        <p>Posted 11 Hours Ago</p>
-                                    </div>
-                                    <div class="d-flex justify-content-start">
-                                        <span class="card-text" style="margin-right:40px;">
-                                            <i class="fa-brands fa-staylinked"></i>
-                                            {{ $job->company_name }}
-                                        </span>
-                                        <span class="card-text">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            {{ $job->location }}
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <i class="fa-solid fa-money-check-dollar" style="margin-right:10px;"></i>
-                                            <i class="fa-solid fa-bangladeshi-taka-sign"></i>
-                                            {{ $job->salary }}
-                                        </span>
-                                    </div>
-                                    <div class="d-flex justify-content-start">
-                                        <span class="job-category">{{ $job->type }}</span>
-                                        <span class="job-nature">{{ $job->job_nature }}</span>
+                            <a style="color: black" href="{{ route('show_job', $job) }}">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">{{ $job->title }}</h5>
+                                            <p>Posted 11 Hours Ago</p>
+                                        </div>
+                                        <div class="d-flex justify-content-start">
+                                            <span class="card-text" style="margin-right:40px;">
+                                                <i class="fa-brands fa-staylinked"></i>
+                                                {{ $job->company_name }}
+                                            </span>
+                                            <span class="card-text">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                {{ $job->location }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span>
+                                                <i class="fa-solid fa-money-check-dollar" style="margin-right:10px;"></i>
+                                                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                                                {{ $job->salary }}
+                                            </span>
+                                        </div>
+                                        <div class="d-flex justify-content-start">
+                                            <span class="job-category">{{ $job->type }}</span>
+                                            <span class="job-nature">{{ $job->job_nature }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+
                         </div>
                     @endforeach
 

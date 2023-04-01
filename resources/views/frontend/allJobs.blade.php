@@ -54,7 +54,7 @@
                 <div class="row">
                     @foreach ($jobs as $job)
                         <div class="col-md-6">
-                            <a href="{{ route('show_job',$job) }}">
+                            <a style="color: black" href="{{ route('show_job',$job) }}">
                                 <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
