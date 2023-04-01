@@ -262,7 +262,6 @@ a.nav-link.nav-list.nav-font-color {
     text-decoration: none;
 }
 .card-grid-list h5 {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 800;
     font-size: 20px;
@@ -277,13 +276,16 @@ a.nav-link.nav-list.nav-font-color {
 .job-category {
     background: #81acff;
     opacity: 0.6;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-right: 40px;
+    padding: 5px 5px;
 }
 .job-nature {
     background: #9affbc;
     opacity: 0.6;
-    border-radius: 10px;
+    border-radius: 20px;
+    padding: 5px 5px;
+
 }
 
 /* END Explore Job Section */

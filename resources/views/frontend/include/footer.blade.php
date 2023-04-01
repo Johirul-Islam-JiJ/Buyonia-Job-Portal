@@ -1,7 +1,7 @@
 <footer class="bg-light py-3">
     <div class="container">
         <div class="row">
-            <div class="col-4 text-left">
+            <div class="col-md-4 text-left">
                 <a class="footer-brand" href="{{ url('/') }}">
                     <span class="footer-logo">
                         <img class="footer-logo" src="/images/{{ $existing_setting->logo }}">
@@ -9,7 +9,7 @@
                 </a>
 
             </div>
-            <div class="col-4 text-center">
+            <div class="col-md-4 text-center">
                 <div class="footer-mid">
                     <p>Find Us On Social Media:</p>
                     <p>
@@ -21,7 +21,7 @@
                 </div>
 
             </div>
-            <div class="col-4 text-center">
+            <div class="col-md-4 text-center">
                 <span class="footer-mid">
                     <p>
                         For any query, Mail us <br>
