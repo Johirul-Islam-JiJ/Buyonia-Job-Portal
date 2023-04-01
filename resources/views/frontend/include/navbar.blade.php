@@ -18,7 +18,8 @@
                         href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-list" href="#">All Jobs</a>
+                    <a class="nav-link nav-list {{ request()->routeIs('all_jobs') ? 'nav-font-color' : '' }}"
+                        href="{{ route('all_jobs') }}">All Jobs</a>
                 </li>
             </ul>
 

@@ -180,7 +180,6 @@ a.nav-link.nav-list.nav-font-color {
 
 .category {
     z-index: 999;
-    position: sticky;
     height: 90px;
     justify-content: center;
     display: flex !important;
@@ -258,6 +257,11 @@ a.nav-link.nav-list.nav-font-color {
 
 .card-grid-list {
     text-align: center;
+
+}
+.card-grid-list a{
+    list-style-type: none;
+    text-decoration: none;
 }
 .card-grid-list h5 {
     font-family: "Inter";
@@ -366,3 +370,47 @@ a.nav-link.nav-list.nav-font-color {
 }
 
 /*  End Card Section*/
+
+/*  Start All Jobs Section*/
+
+.all-jobs-header {
+    width: 1440px;
+    height: 140px;
+    background: #fafbff;
+}
+
+.all-jobs-header h2 {
+    width: 464px;
+    height: 50px;
+    left: calc(50% - 464px / 2 - 268px);
+    top: 64px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 50px;
+    /* identical to box height, or 179% */
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    /* Text */
+    color: #1f1f1f;
+}
+.all-jobs-header p {
+    width: 115px;
+    height: 28px;
+    left: 220px;
+    top: 126px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    /* identical to box height, or 175% */
+    text-align: center;
+    text-transform: capitalize;
+    /* Text */
+    color: #1f1f1f;
+}
+
+/*  End All Jobs Section*/

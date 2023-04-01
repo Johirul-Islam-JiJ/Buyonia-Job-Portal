@@ -83,4 +83,6 @@ Route::group(['middleware' => 'share-data'], function () {
     });
 
     Route::get('/',[FrontendController::class,'index'])->name('homepage');
+    Route::get('all-jobs',[FrontendController::class,'all_jobs'])->name('all_jobs');
+    Route::get('show_job/{job}',[FrontendController::class,'show_job'])->name('show_job');
 });
