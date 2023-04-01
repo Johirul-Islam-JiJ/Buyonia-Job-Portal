@@ -257,9 +257,8 @@ a.nav-link.nav-list.nav-font-color {
 
 .card-grid-list {
     text-align: center;
-
 }
-.card-grid-list a{
+.card-grid-list a {
     list-style-type: none;
     text-decoration: none;
 }
@@ -414,3 +413,45 @@ a.nav-link.nav-list.nav-font-color {
 }
 
 /*  End All Jobs Section*/
+
+/*  Start Job Show Section*/
+
+.job-show-header {
+    width: 1440px;
+    height: 390px;
+    left: 0px;
+    top: 0px;
+
+    background: #001833;
+}
+.job-show-header h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-top: 150px;
+}
+.job-show-header span {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #ffffff;
+}
+.show-job-img {
+    width: 1440px;
+    height: 500px;
+    background-image: url('/frontend/images/showjob.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/*  End Job Show Section*/
