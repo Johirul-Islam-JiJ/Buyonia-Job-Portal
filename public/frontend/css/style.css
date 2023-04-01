@@ -266,10 +266,22 @@ a.nav-link.nav-list.nav-font-color {
     font-size: 20px;
     line-height: 24px;
     text-transform: capitalize;
-
     /* Primary */
-
     color: #0033cc;
+}
+.card-body p {
+    color: #a4a4a4;
+}
+.job-category {
+    background: #81acff;
+    opacity: 0.6;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+.job-nature {
+    background: #9affbc;
+    opacity: 0.6;
+    border-radius: 10px;
 }
 
 /* END Explore Job Section */
@@ -288,7 +300,6 @@ a.nav-link.nav-list.nav-font-color {
     letter-spacing: 0.02em;
     /* Text */
     color: #1f1f1f;
-    margin-left: 200px;
 }
 
 .register-msg-img p {
@@ -303,16 +314,16 @@ a.nav-link.nav-list.nav-font-color {
     /* Text */
     color: #1f1f1f;
     text-align: left;
-    margin-left: 200px !important;
 }
 .register-msg {
     position: relative;
+    left: 15%;
 }
 
 .register-msg img {
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 40%;
+    left: 0%;
     transform: translate(-50%, -50%);
 }
 .register-img {
@@ -325,7 +336,6 @@ a.nav-link.nav-list.nav-font-color {
     background: #0033cc;
     border-radius: 5px;
     padding-top: 12px;
-    margin-left: 200px;
     margin-bottom: 30px;
     margin-top: 60px;
     text-align: center;
@@ -346,3 +356,13 @@ a.nav-link.nav-list.nav-font-color {
 }
 
 /* End Register Message Section */
+
+/*  Start Card Section */
+.card {
+    background: #ffffff;
+    box-shadow: 0px 4px 40px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/*  End Card Section*/
