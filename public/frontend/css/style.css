@@ -445,13 +445,108 @@ a.nav-link.nav-list.nav-font-color {
     /* identical to box height */
     text-align: center;
     color: #ffffff;
+    margin-bottom: 40px;
 }
+.job-show-header a {
+    /* Primary */
+    background: #0033cc;
+    border-radius: 8px;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+}
+
 .show-job-img {
     width: 1440px;
     height: 500px;
-    background-image: url('/frontend/images/showjob.png');
+    background-image: url("/frontend/images/showjob.png");
     background-size: cover;
     background-position: center;
+    margin-bottom: 50px;
 }
 
+.job-details-show-info h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: start !important;
+    /* identical to box height */
+    /* Text */
+    color: #1f1f1f;
+}
+
+.job-details-show-info h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    /* Text */
+    color: #1f1f1f;
+}
+.job-details-show-info p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* Text */
+    color: #1f1f1f;
+}
+.job-details-show-info-right {
+    /* Primary 2 */
+    background: #daedf5;
+}
+.job-details-show-info-right a {
+    /* Primary */
+    background: #0033cc;
+    border-radius: 8px;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+}
+.job-details-show-info-right h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    text-align: center;
+    color: #000000;
+}
+.job-details-show-info-right-body {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    margin-left: 40px;
+    /* or 141% */
+    /* Primary */
+    color: #0033cc;
+}
 /*  End Job Show Section*/
