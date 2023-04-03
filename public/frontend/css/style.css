@@ -29,7 +29,6 @@ body {
     text-align: center;
 }
 h1 {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
@@ -58,7 +57,6 @@ h1 {
     color: #0033cc;
 }
 .hero-message {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -89,7 +87,6 @@ h1 {
 .hero-search-box ::placeholder {
     width: 245px;
     height: 19px;
-    font-family: "Inter";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -148,7 +145,6 @@ a.nav-link.nav-list.nav-font-color {
     color: #0033cc;
 }
 .footer-mid p {
-    font-family: "Inter";
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -189,7 +185,6 @@ a.nav-link.nav-list.nav-font-color {
 .category-item {
     width: 250px;
     height: 28px;
-    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -217,7 +212,6 @@ a.nav-link.nav-list.nav-font-color {
 .category-link-active a {
     width: 96px;
     height: 19px;
-    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -242,7 +236,6 @@ a.nav-link.nav-list.nav-font-color {
 .load-more a {
     width: 96px;
     height: 19px;
-    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
