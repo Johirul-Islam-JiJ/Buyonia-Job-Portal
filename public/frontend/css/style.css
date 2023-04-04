@@ -18,86 +18,7 @@ body {
     height: 90px;
 }
 
-/* Hero section */
-.hero {
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-h1 {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 67px;
-    margin-bottom: 30px;
 
-    /* or 140% */
-
-    text-align: center;
-    letter-spacing: 0.02em;
-
-    /* Text */
-
-    color: #1f1f1f;
-}
-.get-started {
-    width: 30%;
-    height: 48px;
-    background: rgba(203, 216, 255, 0.4);
-    border-radius: 30px;
-    padding-top: 12px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-.get-started p {
-    color: #0033cc;
-}
-.hero-message {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-    width: 60%;
-    height: 48px;
-    padding-top: 12px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-
-.hero-message p {
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: #1f1f1f;
-}
-.hero-search-box {
-    background: #ffffff;
-    border-radius: 5px;
-    width: 40%;
-    height: 48px;
-    border-radius: 30px;
-    padding-top: 12px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
-
-.hero-search-box ::placeholder {
-    width: 245px;
-    height: 19px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    /* Primary */
-    color: #0033cc;
-    opacity: 0.35;
-}
-
-/* end hero */
 
 /* Start Navbar */
 .brand-logo {
@@ -160,10 +81,94 @@ a.nav-link.nav-list.nav-font-color {
 
 /* End Footer */
 
+/* Hero section */
+.hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 67px;
+    margin-bottom: 30px;
+    /* or 140% */
+    text-align: center;
+    letter-spacing: 0.02em;
+    /* Text */
+    color: #1f1f1f;
+}
+.get-started {
+    background: rgba(203, 216, 255, 0.4);
+    border-radius: 30px;
+    color: #0033cc;
+    margin-top: 20%;
+    padding: 5px 5px;
+}
+.hero-message {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+     text-align: center;
+    letter-spacing: 0.05em;
+    color: #1f1f1f;
+}
+
+.search{
+       position: relative;
+       box-shadow: 0 0 40px #A8BEFF;
+       opacity: 0.8;
+       margin-bottom: 300px;
+
+       }
+
+       .search input{
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+
+       }
+
+
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid blue;
+
+
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 20px;
+        left: 16px;
+
+       }
+
+       .search button{
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        width: 110px;
+        background: blue;
+
+       }
+
+
+/* end hero */
+
 /* Explore Job Section Start */
 
 .explore-job {
-    height: 500px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -278,7 +283,6 @@ a.nav-link.nav-list.nav-font-color {
     opacity: 0.6;
     border-radius: 20px;
     padding: 5px 5px;
-
 }
 
 /* END Explore Job Section */

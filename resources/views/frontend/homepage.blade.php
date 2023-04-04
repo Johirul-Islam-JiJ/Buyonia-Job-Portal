@@ -3,42 +3,40 @@
 @section('styles')
     <style>
 
+
     </style>
 @endsection
 @section('content')
     <!-- Hero section -->
     <section class="hero">
         <div class="container">
-            <div class="get-started">
-                <p>Get Started from today</p>
+            <div class="d-flex justify-content-center">
+                <p class="get-started">Get Started from today</p>
             </div>
-            <div>
+            <div class="d-flex justify-content-center">
                 <h1>Join our team today to take your <br>
                     <span class="text-primary">next step</span> of your career.
                 </h1>
             </div>
-            <div class="hero-message">
-                <p>
+            <div class="d-flex justify-content-center">
+                <p class="hero-message">
                     It is a long established fact that a reader will be distracted by the readable content of a page
+                    when looking at its layout.readable content of a page
                     when looking at its layout.
+                </p>
             </div>
-            <div class="hero-search-box">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        {{-- <span class="input-group-text">
-                            <i class="fas fa-search"></i>
-                        </span> --}}
-                    </div>
-                    <input type="search" id="form1" class="form-control" placeholder="Start Searching your Dream Job"
-                        aria-label="Search" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Start Searching Your Dream Job">
+                        <button class="btn btn-primary">Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="align-center">
+    <section class="explore">
         <div class="container">
             <div>
                 <h1>Explore Popular
