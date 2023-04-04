@@ -10,25 +10,20 @@
     <!-- Hero section -->
     <section class="hero">
         <div class="container">
-            <div class="d-flex justify-content-center">
+            <div class="text-center">
                 <p class="get-started">Get Started from today</p>
-            </div>
-            <div class="d-flex justify-content-center">
                 <h1>Join our team today to take your <br>
                     <span class="text-primary">next step</span> of your career.
                 </h1>
-            </div>
-            <div class="d-flex justify-content-center">
                 <p class="hero-message">
                     It is a long established fact that a reader will be distracted by the readable content of a page
                     when looking at its layout.readable content of a page
                     when looking at its layout.
                 </p>
             </div>
-            <div class="row height d-flex justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center">
                 <div class="col-md-8">
-                    <div class="search">
-                        <i class="fa fa-search"></i>
+                    <div class="search input-group">
                         <input type="text" class="form-control" placeholder="Start Searching Your Dream Job">
                         <button class="btn btn-primary">Search</button>
                     </div>
@@ -38,40 +33,37 @@
     </section>
     <section class="explore">
         <div class="container">
-            <div>
+            <div class="text-center">
                 <h1>Explore Popular
                     <span class="text-primary">Jobs</span>
                 </h1>
-            </div>
-            <div class="hero-message">
-                <p>
-                    Get the fastest application so that your name is above other application
+                <p>Get the fastest application so that your name is above other application</p>
             </div>
             <div>
-                <ul class="category">
-                    <li class="category-link-active">
-                        <a class="category-link" aria-current="page" href="#">Recent Jobs</a>
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Recent Jobs</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Web Developer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Web Developer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Graphic Designer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Graphic Designer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Digital Marketer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Digital Marketer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Mobile App Developer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mobile App Developer</a>
                     </li>
                 </ul>
             </div>
             <div class="card-grid-list">
                 <div class="row">
                     @foreach ($jobs as $job)
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <a style="color: black" href="{{ route('show_job', $job) }}">
-                                <div class="card">
+                                <div class="card h-100">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <h5 class="card-title">{{ $job->title }}</h5>
@@ -93,6 +85,8 @@
                                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>
                                                 {{ $job->salary }}
                                             </span>
+
+
                                         </div>
                                         <div class="d-flex justify-content-start">
                                             <span class="job-category">{{ $job->type }}</span>
