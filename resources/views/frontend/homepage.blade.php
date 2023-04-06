@@ -2,8 +2,7 @@
 
 @section('styles')
     <style>
-
-
+        
     </style>
 @endsection
 @section('content')
@@ -12,17 +11,19 @@
         <div class="container">
             <div class="text-center">
                 <p class="get-started">Get Started from today</p>
-                <h1>Join our team today to take your <br>
-                    <span class="text-primary">next step</span> of your career.
+                <h1>Join Our Team Today To Take Your <br>
+                    <span class="text-primary">Next Step</span> Of Your Career.
                 </h1>
-                <p class="hero-message">
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout.readable content of a page
-                    when looking at its layout.
-                </p>
+                <div class="d-flex justify-content-center">
+                    <p class="hero-message">
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout.
+                    </p>
+                </div>
+
             </div>
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="search input-group">
                         <input type="text" class="form-control" placeholder="Start Searching Your Dream Job">
                         <button class="btn btn-primary">Search</button>
@@ -37,9 +38,12 @@
                 <h1>Explore Popular
                     <span class="text-primary">Jobs</span>
                 </h1>
-                <p>Get the fastest application so that your name is above other application</p>
+                <div class="d-flex justify-content-center">
+                    <p class="hero-message">Get the fastest application so that your name is above other application</p>
+
+                </div>
             </div>
-            <div>
+            <div class="category">
                 <ul class="nav nav-pills justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Recent Jobs</a>
@@ -106,7 +110,7 @@
             </div>
             <div class="register-msg-img">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <div class="register-msg">
                             <h1>
                                 So Many People Are <br>
@@ -124,7 +128,7 @@
                         </div>
 
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <div class="register-img">
                             <img src="frontend/images/register.png" alt="image">
                         </div>

@@ -8,10 +8,116 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-/* Sticky navbar */
+
+/* Start Hero Section */
+
+.get-started {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    background: rgba(203, 216, 255, 0.4);
+    border-radius: 30px;
+    color: #0033cc;
+    width: 100%;
+    max-width: 251px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 5px 2px;
+    margin-bottom: 30px;
+}
+
+/* additional styles to demonstrate responsiveness */
+@media only screen and (max-width: 500px) {
+    .get-started {
+        max-width: 60%;
+        margin-top: 50px;
+    }
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 67px;
+    margin-bottom: 30px;
+    /* or 140% */
+    text-align: center;
+    letter-spacing: 0.02em;
+    /* Text */
+    color: #1f1f1f;
+}
+
+.hero-message {
+    max-width: 60%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 188% */
+    text-align: center;
+    letter-spacing: 0.05em;
+    /* Text */
+    color: #1f1f1f;
+    margin-bottom: 30px;
+}
+.search {
+    position: relative;
+    box-shadow: 0 0 40px #a8beff;
+    opacity: 0.8;
+    margin-bottom: 100px;
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category a {
+    text-decoration: none;
+    color: black;
+}
+
+a.nav-link.active {
+    border-radius: 25px;
+}
 
 
-/*  End All Jobs Section*/
+
+
+
+
+
+
+
+
+
+/* End Hero Section */
 
 /*  Start Job Show Section*/
 
