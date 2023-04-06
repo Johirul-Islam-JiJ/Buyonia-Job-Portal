@@ -3,19 +3,6 @@
 @section('styles')
     <style>
 
-        .load-more {
-            width: 96px;
-            height: 19px;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 19px;
-            text-align: center;
-            text-transform: capitalize;
-            color: #ffffff;
-            list-style-type: none;
-            text-decoration: none;
-        }
     </style>
 @endsection
 @section('content')
@@ -110,7 +97,6 @@
                                     </div>
                                 </div>
                             </a>
-
                         </div>
                     @endforeach
 
@@ -123,21 +109,21 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="register-msg">
+
                             <h1>
                                 So Many People Are <br>
                                 <span class="text-primary">Engaged</span> All Over The World
                             </h1>
+
+                            <img src="frontend/images/Vector.png" alt="">
                             <p> Et in sapien enim congue interdum pulvinar non sed. Ac augue netus tellus semper.Et in
                                 sapien
                                 enim congue interdum pulvinar non sed.
                                 Ac augue netus tellus semper. </p>
-                            <img src="frontend/images/Vector.png" alt="">
                             <div class="register-today">
-                                <a class="" href="#">Register Today</a>
+                                <a class="btn btn-primary" href="#">Register Today</a>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="col-md-6">
                         <div class="register-img">
