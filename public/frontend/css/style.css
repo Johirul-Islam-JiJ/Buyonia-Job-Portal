@@ -107,15 +107,44 @@ a.nav-link.active {
     border-radius: 25px;
 }
 
+.card-grid-list {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+.card-grid-list a {
+    list-style-type: none;
+    text-decoration: none;
+}
 
+.card-grid-list h5 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    /* Primary */
+    color: #0033cc;
+}
 
+.card-body p {
+    color: #a4a4a4;
+}
 
+.job-category {
+    background: #81acff;
+    opacity: 0.6;
+    border-radius: 20px;
+    margin-right: 30px;
+    padding: 5px 5px;
+}
 
-
-
-
-
+.job-nature {
+    background: #9affbc;
+    opacity: 0.6;
+    border-radius: 20px;
+    padding: 5px 5px;
+}
 
 /* End Hero Section */
 

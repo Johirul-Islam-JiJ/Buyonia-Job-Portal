@@ -2,7 +2,20 @@
 
 @section('styles')
     <style>
-        
+
+        .load-more {
+            width: 96px;
+            height: 19px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #ffffff;
+            list-style-type: none;
+            text-decoration: none;
+        }
     </style>
 @endsection
 @section('content')
@@ -74,7 +87,7 @@
                                             <p>Posted 11 Hours Ago</p>
                                         </div>
                                         <div class="d-flex justify-content-start">
-                                            <span class="card-text" style="margin-right:40px;">
+                                            <span class="card-text" style="margin-right:20%;">
                                                 <i class="fa-brands fa-staylinked"></i>
                                                 {{ $job->company_name }}
                                             </span>
@@ -83,16 +96,14 @@
                                                 {{ $job->location }}
                                             </span>
                                         </div>
-                                        <div>
+                                        <div class="d-flex justify-content-start" style="margin-top:10px;">
                                             <span>
                                                 <i class="fa-solid fa-money-check-dollar" style="margin-right:10px;"></i>
                                                 <i class="fa-solid fa-bangladeshi-taka-sign"></i>
                                                 {{ $job->salary }}
                                             </span>
-
-
                                         </div>
-                                        <div class="d-flex justify-content-start">
+                                        <div class="d-flex justify-content-start" style="margin-top:10px;">
                                             <span class="job-category">{{ $job->type }}</span>
                                             <span class="job-nature">{{ $job->job_nature }}</span>
                                         </div>
@@ -105,8 +116,8 @@
 
                 </div>
             </div>
-            <div class="load-more">
-                <a class="" href="#">Load More</a>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary" href="#">Load More</a>
             </div>
             <div class="register-msg-img">
                 <div class="row">
