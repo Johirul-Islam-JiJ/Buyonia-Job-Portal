@@ -2,7 +2,7 @@
 
 @section('styles')
     <style>
-
+       
     </style>
 @endsection
 @section('content')
