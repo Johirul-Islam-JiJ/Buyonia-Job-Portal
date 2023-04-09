@@ -2,7 +2,7 @@
 
 @section('styles')
     <style>
-       
+
     </style>
 @endsection
 @section('content')
@@ -20,7 +20,6 @@
                         when looking at its layout.
                     </p>
                 </div>
-
             </div>
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">

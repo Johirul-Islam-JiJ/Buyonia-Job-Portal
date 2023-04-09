@@ -23,22 +23,22 @@
                     <span class="text-primary">Jobs</span>
                 </h1>
             </div>
-            <div>
-                <ul class="category">
-                    <li class="category-link-active">
-                        <a class="category-link" aria-current="page" href="#">Recent Jobs</a>
+            <div class="category">
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-link-active">
+                        <a class="nav-link" aria-current="page" href="#">Recent Jobs</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Web Developer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Web Developer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Graphic Designer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Graphic Designer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Digital Marketer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Digital Marketer</a>
                     </li>
-                    <li class="category-item">
-                        <a class="category-link" href="#">Mobile App Developer</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mobile App Developer</a>
                     </li>
                 </ul>
             </div>
