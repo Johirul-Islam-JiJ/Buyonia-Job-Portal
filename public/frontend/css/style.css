@@ -233,15 +233,30 @@ a.btn.btn-primary {
 /* End Explore Section */
 
 /*  Start Job Show Section*/
-
 .job-show-header {
-    width: 1440px;
+    width: 100%;
     height: 390px;
-    left: 0px;
-    top: 0px;
-
     background: #001833;
 }
+
+@media only screen and (min-width: 768px) {
+    .job-show-header {
+        width: 768px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .job-show-header {
+        width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .job-show-header {
+        width: 1440px;
+    }
+}
+
 .job-show-header h1 {
     font-family: "Inter";
     font-style: normal;
@@ -263,7 +278,7 @@ a.btn.btn-primary {
     /* identical to box height */
     text-align: center;
     color: #ffffff;
-    margin-bottom: 200px;
+    padding: 2px 2px;
 }
 .job-show-header a {
     /* Primary */
@@ -278,18 +293,38 @@ a.btn.btn-primary {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 20px;
     color: #ffffff;
     list-style-type: none;
     text-decoration: none;
 }
 
 .show-job-img {
-    width: 1440px;
+    width: 100%;
     height: 500px;
     background-image: url("/frontend/images/showjob.png");
     background-size: cover;
     background-position: center;
     margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+    .show-job-img {
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .show-job-img {
+        height: 500px;
+        width: 1440px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .show-job-img {
+        width: 1440px;
+    }
 }
 
 .job-details-show-info h1 {
