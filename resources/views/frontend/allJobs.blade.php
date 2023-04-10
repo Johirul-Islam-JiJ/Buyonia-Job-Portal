@@ -47,7 +47,7 @@
                     @foreach ($jobs as $job)
                         <div class="col-md-6">
                             <a style="color: black" href="{{ route('show_job', $job) }}">
-                                <div class="card">
+                                <div class="card" style="margin-top: 10px">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <h5 class="card-title">{{ $job->title }}</h5>
