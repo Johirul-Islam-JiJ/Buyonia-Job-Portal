@@ -226,8 +226,11 @@ a.btn.btn-primary {
     margin-bottom: 30px;
 }
 
-.register-msg img {
-    transform: translate(-50%, -100%);
+.register-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* End Explore Section */
