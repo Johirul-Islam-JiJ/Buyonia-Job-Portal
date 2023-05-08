@@ -1,0 +1,434 @@
+body {
+    font-family: "Inter";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Start Nav Bar */
+
+.navbar {
+    position: sticky;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+    height: 80px;
+}
+
+.brand-logo {
+    width: 184px;
+    height: 49px;
+}
+
+a.nav-link.login {
+    background: #0033cc;
+    border-radius: 24px;
+    width: 125px;
+    height: 44px;
+    text-align: center;
+    color: white !important;
+    margin-right: 10px;
+}
+
+a.nav-link.register {
+    box-sizing: border-box;
+    width: 125px;
+    height: 44px;
+    border: 2px solid #0033cc;
+    border-radius: 24px;
+    color: black !important;
+    text-align: center;
+}
+
+a.nav-link.nav-list {
+    color: black !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+a.nav-link.nav-list:hover {
+    color: #0033cc !important;
+}
+
+a.nav-link.nav-list.nav-font-color {
+    color: #0033cc !important;
+}
+/* End Nav Bar */
+
+/* Start Footer Section */
+
+@media only screen and (max-width: 500px) {
+    .footer-logo.col-md-4.text-left {
+        text-align: center;
+    }
+}
+
+.social{
+    color: #0033cc;
+}
+.social a {
+    text-decoration: none;
+    color: inherit;
+}
+.fa-xl {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* End Footer Section */
+
+/* Start Hero Section */
+
+.get-started {
+    background: rgba(203, 216, 255, 0.4);
+    color: #0033cc;
+    width: 100%;
+    max-width: 251px;
+    padding: 5px 2px;
+    margin-bottom: 30px;
+}
+
+/* additional styles to demonstrate responsiveness */
+@media only screen and (max-width: 500px) {
+    .get-started {
+        max-width: 60%;
+    }
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 67px;
+    margin-bottom: 30px;
+    /* or 140% */
+    text-align: center;
+    letter-spacing: 0.02em;
+    /* Text */
+    color: #1f1f1f;
+}
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+        line-height: 50px;
+    }
+}
+
+.hero-message {
+    max-width: 60%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 188% */
+    text-align: center;
+    letter-spacing: 0.05em;
+    /* Text */
+    color: #1f1f1f;
+    margin-bottom: 30px;
+}
+.search {
+    position: relative;
+    box-shadow: 0 0 40px #a8beff;
+    opacity: 0.8;
+    margin-bottom: 100px;
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+/* End Hero Section */
+
+/* Start Explore Section */
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category a {
+    text-decoration: none;
+    color: black;
+}
+
+a.nav-link.active {
+    border-radius: 25px;
+}
+
+.card-grid-list {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-grid-list a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.card-grid-list h5 {
+    font-style: normal;
+    font-weight: 800;
+    text-transform: capitalize;
+    /* Primary */
+    color: #0033cc;
+}
+
+.card-body p {
+    color: #a4a4a4;
+}
+
+@media (max-width: 767px) {
+    .d-flex.justify-content-start.align-items-start {
+        flex-direction: column !important;
+    }
+
+    .d-flex.justify-content-start.align-items-start .card-text:last-child {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .d-flex.justify-content-start.align-items-start {
+        flex-direction: row !important;
+    }
+}
+
+.job-category {
+    background: #81acff;
+    opacity: 0.6;
+    padding: 7px 35px;
+}
+
+.job-nature {
+    background: #9affbc;
+    opacity: 0.6;
+    padding: 7px 35px;
+    margin-left: 20px;
+}
+.load-more {
+    width: 96px;
+    height: 19px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a.btn.btn-primary {
+    margin-bottom: 30px;
+}
+
+.register-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+    .register-img img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .register-header {
+        background-image: none;
+    }
+}
+
+/* End Explore Section */
+
+/*  Start Job Show Section*/
+.job-show-header {
+    width: 100%;
+    height: 390px;
+    background: #001833;
+}
+
+@media only screen and (min-width: 768px) {
+    .job-show-header {
+        width: 768px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .job-show-header {
+        width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .job-show-header {
+        width: 1440px;
+    }
+}
+
+.job-show-header h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-top: 150px;
+}
+.job-show-header span {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #ffffff;
+    padding: 2px 2px;
+}
+.job-show-header a {
+    /* Primary */
+    background: #0033cc;
+    border-radius: 8px;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.show-job-img {
+    width: 100%;
+    height: 500px;
+    background-image: url("/frontend/images/showjob.png");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+    .show-job-img {
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .show-job-img {
+        height: 500px;
+        width: 1440px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .show-job-img {
+        width: 1440px;
+    }
+}
+
+.job-details-show-info h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: start !important;
+    /* identical to box height */
+    /* Text */
+    color: #1f1f1f;
+}
+
+.job-details-show-info h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    /* Text */
+    color: #1f1f1f;
+}
+.job-details-show-info p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* Text */
+    color: #1f1f1f;
+}
+.job-details-show-info-right {
+    /* Primary 2 */
+    background: #daedf5;
+}
+.job-details-show-info-right a {
+    /* Primary */
+    background: #0033cc;
+    border-radius: 8px;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+}
+.job-details-show-info-right h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    text-align: center;
+    color: #000000;
+}
+.job-details-show-info-right-body {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    margin-left: 40px;
+    /* or 141% */
+    /* Primary */
+    color: #0033cc;
+}
+/*  End Job Show Section*/
